@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async'
+import { useEffect } from 'react'
 import type { PageMeta, StructuredData } from '../config/pageMeta'
 import { siteConfig } from '../config/site'
 
@@ -12,6 +12,30 @@ const buildImageUrl = (image?: string) => {
   return image.startsWith('http') ? image : buildAbsoluteUrl(image)
 }
 
+const setMetaTag = (attr: 'name' | 'property', key: string, value: string) => {
+  if (typeof document === 'undefined') return null
+  let meta = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`)
+  if (!meta) {
+    meta = document.createElement('meta')
+    meta.setAttribute(attr, key)
+    document.head.appendChild(meta)
+  }
+  meta.setAttribute('content', value)
+  return meta
+}
+
+const setLinkTag = (rel: string, href: string) => {
+  if (typeof document === 'undefined') return null
+  let link = document.head.querySelector<HTMLLinkElement>(`link[rel="${rel}"]`)
+  if (!link) {
+    link = document.createElement('link')
+    link.setAttribute('rel', rel)
+    document.head.appendChild(link)
+  }
+  link.setAttribute('href', href)
+  return link
+}
+
 interface SeoProps extends PageMeta {
   path?: string
   structuredData?: StructuredData
@@ -23,39 +47,47 @@ export const Seo = ({ title, description, keywords, image, path, structuredData 
   const canonical = buildAbsoluteUrl(path)
   const imageUrl = buildImageUrl(image)
   const keywordsContent = (keywords && keywords.length > 0 ? keywords : siteConfig.metadata.keywords).join(', ')
-
   const jsonLdArray = Array.isArray(structuredData) ? structuredData : structuredData ? [structuredData] : []
+  const structuredJson = JSON.stringify(jsonLdArray)
 
-  return (
-    <Helmet>
-      <title>{pageTitle}</title>
-      <link rel="canonical" href={canonical} />
-      <meta name="description" content={pageDescription} />
-      <meta name="keywords" content={keywordsContent} />
+  useEffect(() => {
+    if (typeof document === 'undefined') return
 
-      {/* Open Graph */}
-      <meta property="og:title" content={pageTitle} />
-      <meta property="og:description" content={pageDescription} />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={canonical} />
-      <meta property="og:image" content={imageUrl} />
-      <meta property="og:site_name" content={siteConfig.name} />
+    document.title = pageTitle
+    setLinkTag('canonical', canonical)
 
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={pageTitle} />
-      <meta name="twitter:description" content={pageDescription} />
-      <meta name="twitter:image" content={imageUrl} />
+    setMetaTag('name', 'description', pageDescription)
+    setMetaTag('name', 'keywords', keywordsContent)
+    setMetaTag('property', 'og:title', pageTitle)
+    setMetaTag('property', 'og:description', pageDescription)
+    setMetaTag('property', 'og:type', 'website')
+    setMetaTag('property', 'og:url', canonical)
+    setMetaTag('property', 'og:image', imageUrl)
+    setMetaTag('property', 'og:site_name', siteConfig.name)
+    setMetaTag('name', 'twitter:card', 'summary_large_image')
+    setMetaTag('name', 'twitter:title', pageTitle)
+    setMetaTag('name', 'twitter:description', pageDescription)
+    setMetaTag('name', 'twitter:image', imageUrl)
 
-      {jsonLdArray.map((entry, index) => (
-        <script
-          key={`structured-data-${index}`}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(entry) }}
-        />
-      ))}
-    </Helmet>
-  )
+    const scripts: HTMLScriptElement[] = []
+    const structuredEntries = JSON.parse(structuredJson) as typeof jsonLdArray
+
+    if (structuredEntries.length > 0) {
+      structuredEntries.forEach((entry) => {
+        const script = document.createElement('script')
+        script.type = 'application/ld+json'
+        script.text = JSON.stringify(entry)
+        document.head.appendChild(script)
+        scripts.push(script)
+      })
+    }
+
+    return () => {
+      scripts.forEach((script) => script.remove())
+    }
+  }, [canonical, imageUrl, keywordsContent, pageDescription, pageTitle, structuredJson])
+
+  return null
 }
 
 export default Seo

@@ -124,7 +124,7 @@ const Home = () => {
     {
       title: 'Maliyet Analizi',
       description: 'Expense Calculator ile sefer bazlı net kâra inin.',
-      image: "expense calculator.png"
+      image: '/expense-calculator.png'
     },
     {
       title: 'Filo Yönetimi',

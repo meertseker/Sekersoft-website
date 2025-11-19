@@ -1,18 +1,5 @@
 import { motion } from 'framer-motion'
-import { 
-  Truck,
-  Package,
-  Users,
-  Building2,
-  TrendingUp,
-  DollarSign,
-  Clock,
-  CheckCircle2,
-  BarChart3,
-  FileText,
-  MapPin,
-  Calculator
-} from 'lucide-react'
+import { Truck, Package, Users, Building2, DollarSign, Clock, CheckCircle2, BarChart3, Calculator } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { screenshotPaths } from '../data/screenshots'
 

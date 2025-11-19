@@ -37,7 +37,7 @@ const Features = () => {
       icon: DollarSign,
       title: 'Profesyonel Maliyet Hesaplama',
       description: 'Her siparişin gerçek maliyetini otomatik hesaplayın. Hangi iş karlı hangisi zararlı, anında görün.',
-      image: "expense calculator.png",
+      image: '/expense-calculator.png',
       details: [
         'Yakıt maliyeti - KM bazlı otomatik hesaplama',
         'Sürücü giderleri - Günlük ücret, yemek, süre hesaplama',
@@ -79,7 +79,7 @@ const Features = () => {
       icon: Receipt,
       title: 'Detaylı Gider Takibi',
       description: 'Her sipariş için detaylı gider kaydı tutun. Gerçek maliyetleri tam olarak bilin.',
-      image: "gidertakibi.png",
+      image: '/gidertakibi.png',
       details: [
         'Kategorize gider türleri - Yakıt, HGS, Köprü, Yemek, Bakım, Diğer',
         'Sipariş bazlı gider ekleme',

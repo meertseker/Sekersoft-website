@@ -8,10 +8,10 @@ const normalizeUrl = (url?: string) => {
 const siteUrl = normalizeUrl(import.meta.env.VITE_SITE_URL)
 
 export const siteConfig = {
-  name: 'Sekersoft Logistics OS',
+  name: 'Sekersoft',
   shortName: 'Sekersoft',
-  tagline: 'Offline lojistik yönetim yazılımı',
-  description: 'Sekersoft Logistics OS, siparişleri, maliyetleri ve araç yönetimini tek panelde toplayan offline lojistik yönetim yazılımıdır.',
+  tagline: 'Özel Yazılım Geliştirme',
+  description: 'Sekersoft, işletmenizin ihtiyaçlarına özel yazılım çözümleri geliştiren bir teknoloji şirketidir. Masaüstü, web ve mobil uygulamalardan veritabanı sistemlerine kadar geniş bir yelpazede hizmet sunuyoruz. İlk ürünümüz Sekersoft Lojistik ile taşımacılık sektörüne offline, güvenli ve kullanıcı dostu çözümler getiriyoruz.',
   url: siteUrl,
   contact: {
     email: 'info@sekersoft.com',
@@ -35,17 +35,20 @@ export const siteConfig = {
     twitter: 'https://x.com/sekersoft',
   },
   metadata: {
-    defaultTitle: 'Sekersoft Logistics OS · Offline Lojistik Yönetimi',
-    defaultDescription: 'Sekersoft, lojistik ve nakliye ekiplerinin sipariş, güzergâh ve maliyet süreçlerini offline olarak yönetmesini sağlar.',
+    defaultTitle: 'Sekersoft · Özel Yazılım Geliştirme Şirketi',
+    defaultDescription: 'Sekersoft, işletmenizin ihtiyaçlarına özel yazılım çözümleri geliştiren bir teknoloji şirketidir. Masaüstü, web ve mobil uygulamalardan veritabanı sistemlerine kadar geniş bir yelpazede hizmet sunuyoruz. İlk ürünümüz Sekersoft Lojistik ile taşımacılık sektörüne offline, güvenli ve kullanıcı dostu çözümler getiriyoruz.',
     keywords: [
       'Sekersoft',
+      'özel yazılım',
+      'yazılım geliştirme',
+      'masaüstü uygulama',
+      'web uygulaması',
+      'mobil uygulama',
       'lojistik yazılımı',
       'nakliye yönetimi',
       'maliyet hesaplama',
-      'frota yönetimi',
       'offline lojistik',
       'taşımacılık yazılımı',
-      'fatura yönetimi',
     ],
     ogImage: '/screenshots/01-dashboard.png',
   },

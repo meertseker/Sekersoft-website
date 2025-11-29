@@ -136,7 +136,7 @@ const Testimonials = () => {
 
                 {/* Text */}
                 <p className="text-gray-300 mb-6 italic leading-relaxed">
-                  "{testimonial.text}"
+                  &quot;{testimonial.text}&quot;
                 </p>
 
                 {/* Author */}
@@ -202,7 +202,7 @@ const Testimonials = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/demo"
+                to="/products/logistics#demo"
                 className="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold shadow-2xl shadow-blue-500/30 transition-all hover:shadow-blue-500/50 hover:scale-105"
               >
                 Demo Talep Et

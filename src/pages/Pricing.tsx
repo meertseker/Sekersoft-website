@@ -1,8 +1,15 @@
-import { motion } from 'framer-motion'
-import { Check, HelpCircle, Shield, Download, Headphones, RefreshCw, Award, Users } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Pricing = () => {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    // Pricing sayfası artık Logistics sayfasının içinde
+    navigate('/products/logistics#pricing', { replace: true })
+  }, [navigate])
+
+  return null
   const plans = [
     {
       name: 'Başlangıç',
@@ -193,7 +200,7 @@ const Pricing = () => {
             Şeffaf <span className="gradient-text">Fiyatlandırma</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Abonelik yok, gizli maliyet yok. Paketler <span className="text-white font-semibold">49.900 TL + KDV</span>'den başlar.
+            Abonelik yok, gizli maliyet yok. Paketler <span className="text-white font-semibold">49.900 TL + KDV</span>&apos;den başlar.
             Bir kez satın alın, süresiz kullanın. Tüm verileriniz bilgisayarınızda, tamamen güvende.
           </p>
           <div className="inline-flex items-center gap-2 px-5 py-3 mt-8 rounded-2xl bg-blue-500/10 border border-blue-500/30 text-sm text-blue-100">
@@ -310,7 +317,7 @@ const Pricing = () => {
               Yıllık Bakım & Güncelleme Paketi
             </h2>
             <p className="text-gray-400 mb-6">
-              2. yıldan itibaren lisans bedelinin <span className="text-white font-semibold">{maintenance.percentage}</span>'si
+              2. yıldan itibaren lisans bedelinin <span className="text-white font-semibold">{maintenance.percentage}</span>&apos;si
               karşılığında aşağıdaki hizmetleri sunuyoruz:
             </p>
             <div className="space-y-3">
@@ -427,7 +434,7 @@ const Pricing = () => {
                 İletişime Geçin
               </Link>
               <Link
-                to="/demo"
+                to="/products/logistics#demo"
                 className="px-8 py-4 rounded-xl glass glass-hover font-semibold transition-all hover:scale-105"
               >
                 Demo Talep Et

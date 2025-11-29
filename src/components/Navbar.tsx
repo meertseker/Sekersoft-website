@@ -21,24 +21,13 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Ana Sayfa', path: '/' },
     { 
-      name: 'Ürün', 
-      path: '/features',
+      name: 'Ürünler', 
+      path: '/products',
       submenu: [
-        { name: 'Özellikler', path: '/features' },
-        { name: 'Çözümler', path: '/solutions' },
-        { name: 'Demo', path: '/demo' },
+        { name: 'Sekersoft Lojistik', path: '/products/logistics' },
       ]
     },
-    { name: 'Fiyatlandırma', path: '/pricing' },
-    { 
-      name: 'Kaynaklar', 
-      path: '/resources',
-      submenu: [
-        { name: 'Blog', path: '/blog' },
-        { name: 'Destek', path: '/support' },
-        { name: 'Kaynaklar', path: '/resources' },
-      ]
-    },
+    { name: 'Çözümler', path: '/solutions' },
     { name: 'Hakkımızda', path: '/about' },
     { name: 'İletişim', path: '/contact' },
   ]
@@ -115,10 +104,10 @@ const Navbar = () => {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <Link
-              to="/demo"
+              to="/products/logistics#demo"
               className="px-6 py-2.5 rounded-xl glass glass-hover text-sm font-medium transition-all"
             >
-              Demo Talep Et
+              Sekersoft Lojistik
             </Link>
             <Link
               to="/contact"
@@ -180,11 +169,11 @@ const Navbar = () => {
               ))}
               <div className="pt-4 space-y-2">
                 <Link
-                  to="/demo"
+                  to="/products/logistics#demo"
                   onClick={() => setIsOpen(false)}
                   className="block w-full px-4 py-2.5 rounded-xl glass glass-hover text-sm font-medium text-center transition-all"
                 >
-                  Demo Talep Et
+                  Sekersoft Lojistik
                 </Link>
                 <Link
                   to="/contact"

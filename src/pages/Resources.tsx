@@ -1,8 +1,15 @@
-import { motion } from 'framer-motion'
-import { BookOpen, FileText, Video, Download, ExternalLink } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Resources = () => {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    // Resources sayfası artık Logistics sayfasının içinde
+    navigate('/products/logistics#resources', { replace: true })
+  }, [navigate])
+
+  return null
   const categories = [
     {
       title: 'Başlangıç Kılavuzları',
@@ -153,7 +160,7 @@ const Resources = () => {
             Kaynaklar ve <span className="gradient-text">Dokümantasyon</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Sekersoft'u etkili kullanmanız için gereken tüm kaynaklar. Kılavuzlar, 
+            Sekersoft&apos;u etkili kullanmanız için gereken tüm kaynaklar. Kılavuzlar, 
             video eğitimler ve indirilebilir dosyalar.
           </p>
         </motion.div>

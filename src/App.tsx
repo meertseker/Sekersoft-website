@@ -20,6 +20,8 @@ import Terms from './pages/legal/Terms'
 import KVKK from './pages/legal/KVKK'
 import CookiePolicy from './pages/legal/CookiePolicy'
 import NotFound from './pages/NotFound'
+import Logistics from './pages/products/Logistics'
+import Products from './pages/products/Products'
 
 const RouteMetadata = () => {
   const location = useLocation()
@@ -38,6 +40,8 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/products/logistics" element={<Logistics />} />
             <Route path="/features" element={<Features />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/pricing" element={<Pricing />} />

@@ -1,21 +1,15 @@
-import { motion } from 'framer-motion'
-import { useState } from 'react'
-import { CheckCircle2, Download, Mail, Phone, User, Building2, Send } from 'lucide-react'
-import { siteConfig } from '../config/site'
-import { submitLeadForm } from '../lib/forms'
-
-type FormStatus = 'idle' | 'loading' | 'success' | 'error'
-
-const initialFormState = {
-  name: '',
-  email: '',
-  phone: '',
-  company: '',
-  vehicleCount: '',
-  message: '',
-}
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Demo = () => {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    // Demo sayfası artık Logistics sayfasının içinde
+    navigate('/products/logistics#demo', { replace: true })
+  }, [navigate])
+
+  return null
   const [formData, setFormData] = useState(initialFormState)
   const [submitted, setSubmitted] = useState(false)
   const [status, setStatus] = useState<FormStatus>('idle')

@@ -22,20 +22,34 @@ const defaultMeta: PageMeta = {
 export const pageMeta: Record<string, PageMeta> = {
   default: defaultMeta,
   '/': {
-    title: 'Sekersoft Logistics OS · Offline Lojistik Yönetimi',
+    title: 'Sekersoft · Özel Yazılım Geliştirme Şirketi',
+    description:
+      'Sekersoft, işletmenizin ihtiyaçlarına özel yazılım çözümleri geliştiren bir teknoloji şirketidir. Masaüstü, web ve mobil uygulamalardan veritabanı sistemlerine kadar geniş bir yelpazede hizmet sunuyoruz.',
+    keywords: siteConfig.metadata.keywords,
+    image: siteConfig.metadata.ogImage,
+    structuredData: [organizationSchema, websiteSchema, localBusinessSchema],
+  },
+  '/products': {
+    title: 'Ürünlerimiz · Sekersoft',
+    description:
+      'Sekersoft\'un geliştirdiği yazılım çözümleri. Masaüstü, web ve mobil uygulamalardan veritabanı sistemlerine kadar geniş bir yelpazede hizmet sunuyoruz.',
+    keywords: siteConfig.metadata.keywords,
+    image: '/screenshots/01-dashboard.png',
+  },
+  '/products/logistics': {
+    title: 'Sekersoft Lojistik · Offline Lojistik Yönetimi',
     description:
       'Sipariş, maliyet, rota ve araç yönetimini aynı panelde toplayan offline lojistik yönetim yazılımı. Tek seferlik lisans, sınırsız sipariş.',
     keywords: [...siteConfig.metadata.keywords, 'logistics dashboard', 'offline erp'],
     image: '/screenshots/01-dashboard.png',
-    structuredData: [organizationSchema, websiteSchema, localBusinessSchema],
   },
   '/features': {
-    title: 'Özellikler · Sekersoft Logistics OS',
+    title: 'Özellikler · Sekersoft Lojistik',
     description: 'Sipariş yönetimi, maliyet hesaplama, güzergâh optimizasyonu ve raporlama özelliklerini yakından inceleyin.',
     image: '/screenshots/04-reports.png',
   },
   '/solutions': {
-    title: 'Sektörel Çözümler · Sekersoft Logistics OS',
+    title: 'Sektörel Çözümler · Sekersoft Lojistik',
     description: 'Taşımacılık işletmeleri için özelleştirilmiş iş akışları, maliyet kurguları ve raporlama çözümleri.',
   },
   '/pricing': {
@@ -89,7 +103,7 @@ export const pageMeta: Record<string, PageMeta> = {
     description: 'Çerezleri nasıl kullandığımız ve nasıl yönetebileceğiniz hakkında bilgi alın.',
   },
   '/solutions/transport': {
-    title: 'Taşımacılık Çözümleri · Sekersoft Logistics OS',
+    title: 'Taşımacılık Çözümleri · Sekersoft Lojistik',
     description: 'Nakliye ve taşımacılık operasyonları için süreç optimizasyonu.',
   },
   '*': {

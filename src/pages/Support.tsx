@@ -106,7 +106,7 @@ const Support = () => {
       title: 'Dokümantasyon',
       description: 'Detaylı kullanım kılavuzları',
       action: 'Kaynaklar Sayfası',
-      link: '/resources'
+      link: '/products/logistics#resources'
     }
   ]
 
@@ -264,7 +264,7 @@ const Support = () => {
                 İletişime Geçin
               </Link>
               <Link
-                to="/demo"
+                to="/products/logistics#demo"
                 className="px-8 py-4 rounded-xl glass glass-hover font-semibold transition-all hover:scale-105"
               >
                 Demo Talep Et

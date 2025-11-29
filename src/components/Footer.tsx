@@ -21,10 +21,10 @@ const Footer = () => {
 
   const footerLinks = {
     product: [
-      { name: 'Özellikler', path: '/features' },
-      { name: 'Çözümler', path: '/solutions' },
-      { name: 'Fiyatlandırma', path: '/pricing' },
-      { name: 'Demo', path: '/demo' },
+      { name: 'Sekersoft Lojistik', path: '/products/logistics' },
+      { name: 'Özellikler', path: '/products/logistics#features' },
+      { name: 'Fiyatlandırma', path: '/products/logistics#pricing' },
+      { name: 'Demo', path: '/products/logistics#demo' },
     ],
     company: [
       { name: 'Hakkımızda', path: '/about' },
@@ -33,10 +33,10 @@ const Footer = () => {
       { name: 'İletişim', path: '/contact' },
     ],
     resources: [
-      { name: 'Kaynaklar', path: '/resources' },
+      { name: 'Kaynaklar', path: '/products/logistics#resources' },
       { name: 'Destek', path: '/support' },
       { name: 'Dokümantasyon', path: '/support' },
-      { name: 'API', path: '/resources' },
+      { name: 'API', path: '/products/logistics#resources' },
     ],
     legal: [
       { name: 'Gizlilik Politikası', path: '/privacy' },

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Mail, Phone, MapPin, Send, MessageCircle, Clock, CheckCircle2 } from 'lucide-react'
 import { siteConfig } from '../config/site'
 import { submitLeadForm } from '../lib/forms'
@@ -280,7 +281,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-semibold mb-2 text-blue-400">Teknik destek nasıl alınır?</p>
-                  <p className="text-sm text-gray-400">Teknik destek için formdan "Teknik Destek" konusunu seçerek mesaj iletebilir veya destek ekibimizi arayabilirsiniz.</p>
+                  <p className="text-sm text-gray-400">Teknik destek için formdan &quot;Teknik Destek&quot; konusunu seçerek mesaj iletebilir veya destek ekibimizi arayabilirsiniz.</p>
                 </div>
               </div>
             </div>
@@ -290,9 +291,9 @@ const Contact = () => {
               <p className="text-gray-400 mb-6">
                 Satın almadan önce Sekersoft&apos;u denemek ister misiniz? Demo sayfamızdan ücretsiz demo talep edebilirsiniz.
               </p>
-              <a href="/demo" className="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold hover:scale-105 transition-all">
+              <Link to="/products/logistics#demo" className="inline-block px-6 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold hover:scale-105 transition-all">
                 Demo Talep Et
-              </a>
+              </Link>
             </div>
 
             <div className="glass rounded-3xl p-8">

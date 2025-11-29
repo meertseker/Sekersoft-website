@@ -1,24 +1,15 @@
-import { motion } from 'framer-motion'
-import { 
-  Truck, 
-  Package, 
-  MapPin, 
-  BarChart3, 
-  Receipt,
-  FileText,
-  DollarSign,
-  Settings,
-  Shield,
-  Database,
-  Download,
-  Mail,
-  HardDrive,
-  Monitor,
-  CheckCircle2
-} from 'lucide-react'
-import { screenshotPaths } from '../data/screenshots'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Features = () => {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    // Features sayfası artık Logistics sayfasının içinde
+    navigate('/products/logistics#features', { replace: true })
+  }, [navigate])
+
+  return null
   const mainFeatures = [
     {
       icon: Package,
@@ -332,18 +323,18 @@ const Features = () => {
           className="text-center"
         >
           <h2 className="text-3xl font-bold mb-6">
-            Sekersoft'u denemeye hazır mısınız?
+            Sekersoft&apos;u denemeye hazır mısınız?
           </h2>
           <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
             Demo talep edin, tüm özellikleri keşfedin ve işletmenizi dijitalleştirmeye başlayın.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/demo"
+            <Link
+              to="/products/logistics#demo"
               className="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold shadow-2xl shadow-blue-500/30 transition-all hover:shadow-blue-500/50 hover:scale-105"
             >
               Demo Talep Et
-            </a>
+            </Link>
             <a
               href="/pricing"
               className="px-8 py-4 rounded-xl glass glass-hover font-semibold transition-all hover:scale-105"

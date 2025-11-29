@@ -1,64 +1,63 @@
 import { motion } from 'framer-motion'
 import { Target, Shield, Heart, Code, Database, Monitor, Zap, CheckCircle2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { screenshotPaths } from '../data/screenshots'
 
 const About = () => {
   const values = [
     {
-      icon: Shield,
-      title: 'Offline-First',
-      description: 'İnternet bağlantısı gerektirmez. Tüm verileriniz bilgisayarınızda güvende.'
+      icon: Code,
+      title: 'Özel Çözümler',
+      description: 'Her işletmenin ihtiyacı farklıdır. Standart yazılımlar yerine size özel çözümler geliştiriyoruz.'
     },
     {
       icon: Heart,
-      title: 'Kullanıcı Dostu',
-      description: 'Basit, anlaşılır arayüz. Teknik bilgi gerektirmez, herkes kolayca kullanabilir.'
+      title: 'Kullanıcı Odaklı',
+      description: 'Karmaşık sistemler değil, kullanıcı dostu arayüzler. Teknik bilgi gerektirmez.'
     },
     {
-      icon: Database,
-      title: 'Gizlilik',
-      description: 'Verileriniz sadece sizindir. Hiçbir veri internete gönderilmez.'
+      icon: Shield,
+      title: 'Güvenlik & Gizlilik',
+      description: 'Verileriniz güvende. Modern güvenlik standartları ve gizlilik odaklı yaklaşım.'
     },
     {
       icon: Zap,
-      title: 'Hızlı ve Güvenilir',
-      description: 'Yerel veritabanı sayesinde çok hızlı. SQLite ile güvenilir veri yönetimi.'
+      title: 'Modern Teknoloji',
+      description: 'En güncel teknolojiler ve best practice\'ler ile hızlı, güvenilir çözümler.'
     },
   ]
 
   const techStack = [
     {
-      name: 'Electron',
-      description: 'Cross-platform masaüstü uygulama framework\'ü',
-      icon: Monitor
-    },
-    {
-      name: 'React',
-      description: 'Modern, hızlı ve kullanıcı dostu arayüz',
+      name: 'Modern Stack',
+      description: 'React, TypeScript, Node.js ve daha fazlası',
       icon: Code
     },
     {
-      name: 'SQLite',
-      description: 'Hızlı ve güvenilir yerel veritabanı',
+      name: 'Cross-Platform',
+      description: 'Windows, macOS, Web ve Mobil uygulamalar',
+      icon: Monitor
+    },
+    {
+      name: 'Cloud & Local',
+      description: 'Bulut ve yerel veritabanı çözümleri',
       icon: Database
     },
     {
-      name: 'TypeScript',
-      description: 'Tip güvenli, hatasız kod',
+      name: 'Best Practices',
+      description: 'Agile metodoloji ve modern yazılım geliştirme',
       icon: CheckCircle2
     },
   ]
 
-  const features = [
-    'Tamamen offline çalışır',
-    'Windows ve macOS desteği',
-    'Türkçe dil desteği',
-    'Hızlı ve güvenilir',
-    'Kolay kurulum',
-    'Veri gizliliği',
-    'Tek seferlik ödeme',
-    'Sürekli güncelleme'
+  const services = [
+    'Özel yazılım geliştirme',
+    'Masaüstü uygulamaları',
+    'Web uygulamaları',
+    'Mobil uygulamalar',
+    'Veritabanı çözümleri',
+    'Bulut entegrasyonları',
+    'API geliştirme',
+    'Teknik danışmanlık'
   ]
 
   return (
@@ -74,8 +73,8 @@ const About = () => {
             Sekersoft <span className="gradient-text">Hakkında</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Taşımacılık işletmeleri için özel olarak geliştirilmiş, tamamen offline çalışan
-            profesyonel masaüstü yönetim yazılımı.
+            Sekersoft, işletmelerin dijital dönüşümüne özel yazılım çözümleri sunan bir teknoloji şirketidir.
+            Masaüstü, web ve mobil uygulamalardan veritabanı sistemlerine kadar geniş bir yelpazede hizmet veriyoruz.
           </p>
         </motion.div>
 
@@ -91,29 +90,25 @@ const About = () => {
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center mb-6">
                 <Target className="w-8 h-8 text-blue-400" />
               </div>
-              <h2 className="text-3xl font-bold mb-4">Neden Sekersoft?</h2>
+              <h2 className="text-3xl font-bold mb-4">Misyonumuz</h2>
               <p className="text-gray-400 leading-relaxed mb-6">
-                Taşımacılık sektöründe çalışan küçük ve orta ölçekli işletmelerin en büyük 
-                sorunlarından biri, sipariş takibi ve maliyet hesaplamalarını düzenli bir şekilde 
-                yapamamaktır. Kağıt karmaşası, manuel hesaplamalar, unutulan giderler...
+                Sekersoft olarak, işletmelerin dijital dönüşüm yolculuğunda yanlarında olmayı hedefliyoruz.
+                Standart yazılımların yetersiz kaldığı noktalarda, işletmenizin ihtiyaçlarına özel çözümler geliştiriyoruz.
               </p>
               <p className="text-gray-400 leading-relaxed mb-6">
-                Sekersoft tam da bu sorunu çözmek için geliştirildi. İnternet bağlantısı gerektirmeyen, 
-                tüm verilerinizi bilgisayarınızda güvenle saklayan, kolay kullanımlı bir masaüstü uygulaması.
+                Modern teknolojiler kullanarak, kullanıcı dostu, güvenli ve ölçeklenebilir yazılım çözümleri sunuyoruz.
+                Masaüstü uygulamalardan web platformlarına, mobil uygulamalardan veritabanı sistemlerine kadar
+                geniş bir yelpazede hizmet veriyoruz.
               </p>
               <p className="text-gray-400 leading-relaxed">
-                Karmaşık ERP sistemleri yerine, sadece ihtiyacınız olanı sunuyoruz. Sipariş yönetimi, 
-                otomatik maliyet hesaplama, detaylı raporlama. Hepsi bu kadar basit.
+                İlk ürünümüz olan <Link to="/products/logistics" className="text-blue-400 hover:text-blue-300">Sekersoft Lojistik</Link> ile
+                taşımacılık sektörüne offline, güvenli ve kullanıcı dostu bir çözüm getirdik. 
+                Gelecekte daha fazla sektör için özel çözümler geliştirmeye devam edeceğiz.
               </p>
             </div>
-            <div className="glass rounded-2xl p-4">
-              <div className="rounded-xl overflow-hidden border border-white/10">
-                <img
-                  src={screenshotPaths.dashboard}
-                  alt="Sekersoft masaüstü ekran görüntüsü"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
+            <div className="glass rounded-2xl p-8">
+              <div className="rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center aspect-square">
+                <Code className="w-24 h-24 text-blue-400" />
               </div>
             </div>
           </div>
@@ -178,8 +173,8 @@ const About = () => {
             ))}
           </div>
           <p className="text-center text-gray-400 mt-8">
-            Sekersoft, en son web teknolojileri kullanılarak geliştirilmiş modern bir masaüstü uygulamasıdır.
-            Electron framework'ü sayesinde hem Windows hem de macOS'ta sorunsuz çalışır.
+            Sekersoft, modern teknolojiler ve best practice&apos;ler kullanarak özel yazılım çözümleri geliştirir.
+            Her projede en güncel framework&apos;ler, güvenlik standartları ve kullanıcı deneyimi odaklı yaklaşım benimseriz.
           </p>
         </motion.div>
 
@@ -191,12 +186,12 @@ const About = () => {
           className="glass rounded-3xl p-12 mb-20"
         >
           <h2 className="text-3xl font-bold text-center mb-12">
-            Neden <span className="gradient-text">Sekersoft?</span>
+            Hizmetlerimiz <span className="gradient-text">Neler?</span>
           </h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {features.map((feature, index) => (
+            {services.map((service, index) => (
               <motion.div
-                key={feature}
+                key={service}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -204,7 +199,7 @@ const About = () => {
                 className="flex items-center gap-2"
               >
                 <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" />
-                <span className="text-gray-300">{feature}</span>
+                <span className="text-gray-300">{service}</span>
               </motion.div>
             ))}
           </div>
@@ -222,28 +217,27 @@ const About = () => {
           </h2>
           <div className="max-w-3xl mx-auto space-y-6 text-gray-400 leading-relaxed">
             <p>
-              Sekersoft, taşımacılık sektöründeki gerçek ihtiyaçlardan doğdu. Küçük ve orta ölçekli 
-              taşımacılık işletmelerinin karşılaştığı en büyük sorunları gözlemledik: karmaşık yazılımlar, 
-              pahalı abonelikler, internet bağımlılığı ve veri güvenliği endişeleri.
+              Sekersoft, işletmelerin dijital dönüşüm ihtiyaçlarından doğdu. Piyasadaki standart yazılımların
+              yetersiz kaldığı noktalarda, işletmelere özel çözümler geliştirmek için kuruldu.
             </p>
             <p>
-              Piyasadaki çözümler ya çok karmaşık ve pahalı kurumsal ERP sistemleriydi, ya da 
-              güvenilirliği şüpheli bulut tabanlı uygulamalardı. İşte tam da bu noktada, basit, 
-              güvenli ve uygun fiyatlı bir çözüm geliştirmeye karar verdik.
+              İlk ürünümüz olan <Link to="/products/logistics" className="text-blue-400 hover:text-blue-300">Sekersoft Lojistik</Link> ile
+              taşımacılık sektörüne offline, güvenli ve kullanıcı dostu bir çözüm getirdik. Bu ürün,
+              küçük ve orta ölçekli taşımacılık işletmelerinin gerçek ihtiyaçlarından doğdu.
             </p>
             <p>
-              Sekersoft'u geliştirirken en önemli prensiplerimiz şunlar oldu:
+              Sekersoft olarak çalışırken en önemli prensiplerimiz:
             </p>
             <ul className="list-disc list-inside space-y-2 pl-4">
-              <li><strong>Basitlik:</strong> Karmaşık menüler değil, ihtiyacınız olanı kolayca bulun</li>
-              <li><strong>Offline:</strong> İnternet kesintisi işinizi durdurmasın</li>
-              <li><strong>Gizlilik:</strong> Verileriniz sadece sizindir</li>
-              <li><strong>Uygun Fiyat:</strong> Aylık abonelik yerine tek seferlik ödeme</li>
-              <li><strong>Türkçe:</strong> Tam Türkçe dil desteği ve yerel formatlar</li>
+              <li><strong>Özelleştirme:</strong> Her işletmenin ihtiyacı farklıdır, standart çözümler yeterli değildir</li>
+              <li><strong>Kullanıcı Deneyimi:</strong> Karmaşık sistemler değil, kullanıcı dostu arayüzler</li>
+              <li><strong>Güvenlik:</strong> Verileriniz güvende, modern güvenlik standartları</li>
+              <li><strong>Modern Teknoloji:</strong> En güncel teknolojiler ve best practice&apos;ler</li>
+              <li><strong>Yerel Destek:</strong> Türkçe dil desteği ve yerel formatlar</li>
             </ul>
             <p>
-              Bugün, birçok küçük ve orta ölçekli taşımacılık işletmesi Sekersoft ile işlerini 
-              dijitalleştirmiş durumda. Her gün yeni özellikler eklemeye ve ürünümüzü geliştirmeye 
+              Bugün, birçok işletme Sekersoft çözümleri ile dijital dönüşümlerini gerçekleştiriyor.
+              Her gün yeni projeler üzerinde çalışıyor, daha fazla sektör için özel çözümler geliştirmeye
               devam ediyoruz.
             </p>
           </div>
@@ -258,23 +252,24 @@ const About = () => {
         >
           <div className="glass rounded-3xl p-12">
             <h2 className="text-3xl font-bold mb-4">
-              Sekersoft'u Keşfedin
+              Projenizi Başlatın
             </h2>
             <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-              Demo talep edin, tüm özellikleri test edin ve işletmenizi dijitalleştirmeye başlayın.
+              İşletmenizin ihtiyaçlarına özel yazılım çözümleri için bizimle iletişime geçin.
+              Size en uygun çözümü birlikte belirleyelim.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/demo"
+                to="/contact"
                 className="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold shadow-2xl shadow-blue-500/30 transition-all hover:shadow-blue-500/50 hover:scale-105"
               >
-                Demo Talep Et
+                İletişime Geçin
               </Link>
               <Link
-                to="/contact"
+                to="/products/logistics"
                 className="px-8 py-4 rounded-xl glass glass-hover font-semibold transition-all hover:scale-105"
               >
-                İletişime Geçin
+                Ürünlerimizi İnceleyin
               </Link>
             </div>
           </div>

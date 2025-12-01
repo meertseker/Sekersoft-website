@@ -53,9 +53,9 @@ export const siteConfig = {
     ogImage: '/screenshots/01-dashboard.png',
   },
   forms: {
-    contact: import.meta.env.VITE_CONTACT_FORM_ENDPOINT ?? '',
-    demo: import.meta.env.VITE_DEMO_FORM_ENDPOINT ?? '',
-    newsletter: import.meta.env.VITE_NEWSLETTER_FORM_ENDPOINT ?? '',
+    contact: import.meta.env.VITE_CONTACT_FORM_ENDPOINT ?? 'https://formspree.io/f/xanrjoqw',
+    demo: import.meta.env.VITE_DEMO_FORM_ENDPOINT ?? 'https://formspree.io/f/xanrjoqw',
+    newsletter: import.meta.env.VITE_NEWSLETTER_FORM_ENDPOINT ?? 'https://formspree.io/f/xanrjoqw',
   },
 }
 

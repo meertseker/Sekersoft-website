@@ -57,6 +57,9 @@ export const siteConfig = {
     demo: import.meta.env.VITE_DEMO_FORM_ENDPOINT ?? 'https://formspree.io/f/xanrjoqw',
     newsletter: import.meta.env.VITE_NEWSLETTER_FORM_ENDPOINT ?? 'https://formspree.io/f/xanrjoqw',
   },
+  analytics: {
+    gaMeasurementId: import.meta.env.VITE_GA_MEASUREMENT_ID || '',
+  },
 }
 
 export type SiteConfig = typeof siteConfig

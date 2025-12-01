@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import Seo from './components/Seo'
+import GoogleAnalytics from './components/GoogleAnalytics'
 import { pageMeta } from './config/pageMeta'
 import Home from './pages/Home'
 import Features from './pages/Features'
@@ -35,6 +36,7 @@ const RouteMetadata = () => {
 function App() {
   return (
     <Router>
+      <GoogleAnalytics />
       <ScrollToTop />
       <RouteMetadata />
       <div className="min-h-screen flex flex-col">

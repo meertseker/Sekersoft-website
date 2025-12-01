@@ -18,8 +18,9 @@ export const initGA = (measurementId: string) => {
 
   // Initialize dataLayer
   window.dataLayer = window.dataLayer || []
+  const dataLayer = window.dataLayer
   window.gtag = function () {
-    window.dataLayer.push(arguments)
+    dataLayer.push(arguments)
   }
 
   // Set the measurement ID

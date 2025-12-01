@@ -39,19 +39,16 @@ export const initGA = (measurementId: string) => {
  * Track page view
  * @param path - Page path (e.g., '/about')
  * @param title - Page title (optional)
- * @param measurementId - GA4 Measurement ID (optional, will use getMeasurementId() if not provided)
  */
-export const trackPageView = (path: string, title?: string, measurementId?: string) => {
+export const trackPageView = (path: string, title?: string) => {
   if (typeof window === 'undefined' || !window.gtag) {
     return
   }
 
-  const id = measurementId || getMeasurementId()
-  if (!id) {
-    return
-  }
+  // Use the measurement ID from environment or default to the one in index.html
+  const measurementId = getMeasurementId() || 'G-SMBMV6EV2B'
 
-  window.gtag('config', id, {
+  window.gtag('config', measurementId, {
     page_path: path,
     page_title: title,
   })

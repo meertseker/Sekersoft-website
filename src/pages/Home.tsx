@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import { 
   Truck, 
   Shield, 
@@ -12,11 +13,80 @@ import {
   Cloud,
   Smartphone,
   Globe,
-  Users
+  Users,
+  ChevronDown,
+  Send
 } from 'lucide-react'
 import { screenshotPaths } from '../data/screenshots'
+import { siteConfig } from '../config/site'
+import { submitLeadForm } from '../lib/forms'
+
+type FormStatus = 'idle' | 'loading' | 'success' | 'error'
+
+const initialFormState = {
+  name: '',
+  email: '',
+  phone: '',
+  subject: '',
+  message: '',
+  kvkk: false,
+}
 
 const Home = () => {
+  const [formData, setFormData] = useState(initialFormState)
+  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState<FormStatus>('idle')
+  const [errorMessage, setErrorMessage] = useState('')
+  const [botField, setBotField] = useState('')
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    if (botField) {
+      return
+    }
+
+    setStatus('loading')
+    setErrorMessage('')
+
+    const payload = {
+      ...formData,
+      kvkk: formData.kvkk ? 'on' : 'off',
+    }
+
+    try {
+      if (siteConfig.forms.contact) {
+        await submitLeadForm({
+          endpoint: siteConfig.forms.contact,
+          payload: {
+            ...payload,
+            formName: 'contact',
+          },
+        })
+      } else {
+        console.info('Contact form submission (development only):', payload)
+      }
+
+      setFormData(initialFormState)
+      setSubmitted(true)
+      setStatus('success')
+    } catch (error) {
+      setStatus('error')
+      setErrorMessage(error instanceof Error ? error.message : 'Mesaj gönderilirken bir sorun oluştu. Lütfen tekrar deneyin.')
+    }
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const target = e.target
+    const value = target instanceof HTMLInputElement && target.type === 'checkbox' ? target.checked : target.value
+
+    setFormData((prev) => ({
+      ...prev,
+      [target.name]: value,
+    }))
+  }
+
+  const subjectOptions = ['Demo Talebi', 'Fiyat Teklifi', 'Teknik Destek', 'Satış', 'Diğer']
   // Sekersoft Yazılım Hizmetleri
   const softwareServices = [
     {
@@ -84,16 +154,19 @@ const Home = () => {
   ]
 
   const softwareBenefits = [
-    'İşletmenize özel çözümler - Standart yazılımlar değil',
-    'Modern teknolojiler - En güncel framework ve kütüphaneler',
-    'Güvenli ve ölçeklenebilir mimari',
-    'Sürekli destek ve bakım hizmetleri',
-    'Kullanıcı dostu arayüzler - UX/UI odaklı tasarım',
-    'Hızlı teslimat - Agile metodoloji ile çalışıyoruz',
+    'İşletmenizin özel ihtiyaçlarını anlıyoruz - Her işletme farklıdır, çözümleriniz de özel olmalı',
+    'Zamanınızı değerli görüyoruz - Hızlı teslimat ve verimli süreçlerle işinizi aksatmıyoruz',
+    'Bütçenize uygun çözümler - Şeffaf fiyatlandırma, gizli maliyet yok',
+    'Güvenliğiniz önceliğimiz - Verileriniz güvende, gizliliğiniz korunur',
+    'Sürekli yanınızdayız - Kurulum sonrası destek ve bakım hizmetlerimiz devam eder',
+    'Kullanım kolaylığı - Teknik bilgi gerektirmeden, herkesin kullanabileceği arayüzler',
+    'Ölçeklenebilir çözümler - İşletmeniz büyüdükçe yazılımınız da büyür',
+    'Yerli ve güvenilir - Türkiye\'de geliştirilmiş, yerel desteğe erişim kolaylığı',
   ]
 
   const greetingGradient = 'linear-gradient(135deg, #0A84FF 0%, #30D158 100%)'
-  const greetingGradientSoft = 'linear-gradient(135deg, rgba(10,132,255,0.25), rgba(48,209,88,0.25))'
+  // Gelecekte kullanılabilir
+  // const greetingGradientSoft = 'linear-gradient(135deg, rgba(10,132,255,0.25), rgba(48,209,88,0.25))'
 
   return (
     <div className="min-h-screen">
@@ -153,7 +226,7 @@ const Home = () => {
               Masaüstü, web ve mobil uygulamalardan veritabanı sistemlerine kadar geniş bir yelpazede hizmet sunuyoruz.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link
                 to="/contact"
                 className="group px-8 py-4 rounded-2xl text-white font-semibold shadow-2xl shadow-blue-500/30 transition-all hover:shadow-blue-500/50 hover:scale-105 hover:opacity-95 flex items-center justify-center gap-2"
@@ -169,12 +242,41 @@ const Home = () => {
                 Hakkımızda
               </Link>
             </div>
+
+            {/* Sekersoft Lojistik'e Kaydır Butonu */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="flex justify-center"
+            >
+              <a
+                href="#sekersoft-lojistik"
+                className="group flex flex-col items-center gap-2 text-white/70 hover:text-white transition-all duration-300"
+                onClick={(e) => {
+                  e.preventDefault()
+                  const element = document.getElementById('sekersoft-lojistik')
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                  }
+                }}
+              >
+                <span className="text-sm font-medium">Sekersoft Lojistik'i Keşfet</span>
+                <motion.div
+                  animate={{ y: [0, 8, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                  className="w-10 h-10 rounded-full backdrop-blur-xl bg-white/10 border border-white/20 flex items-center justify-center group-hover:bg-white/20 transition-all"
+                >
+                  <ChevronDown className="w-5 h-5" />
+                </motion.div>
+              </a>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Sekersoft İstatistikleri */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="pt-4 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {companyStats.map((stat, index) => (
@@ -246,7 +348,7 @@ const Home = () => {
       </section>
 
       {/* Sekersoft Lojistik Uygulaması Bölümü */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden border-t border-white/10">
+      <section id="sekersoft-lojistik" className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden border-t border-white/10">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -335,7 +437,8 @@ const Home = () => {
                 Neden <span className="gradient-text">Sekersoft?</span>
               </h2>
               <p className="text-xl text-gray-400 mb-8">
-                Özel yazılım geliştirme konusunda deneyimli ekibimizle işletmenizin dijital dönüşümüne değer katıyoruz.
+                Müşteri ihtiyaçlarınızı anlıyor, işletmenizin büyümesine katkı sağlayacak özel çözümler geliştiriyoruz. 
+                Standart yazılımlar sizin için yeterli değilse, size özel çözümlerle yanınızdayız.
               </p>
               <div className="space-y-4">
                 {softwareBenefits.map((benefit, index) => (
@@ -368,18 +471,174 @@ const Home = () => {
               className="relative"
             >
               <div className="glass rounded-3xl p-8">
-                <div
-                  className="aspect-square rounded-2xl flex items-center justify-center"
-                  style={{ backgroundImage: greetingGradientSoft }}
-                >
-                  <div className="text-center">
-                    <Code className="w-24 h-24 mx-auto mb-4 text-blue-400" />
-                    <p className="text-xl font-semibold">Özel Çözümler</p>
+                <div className="aspect-square rounded-2xl overflow-hidden relative group">
+                  <img
+                    src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80&auto=format&fit=crop"
+                    alt="Özel Yazılım Geliştirme ve Çözümler"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end">
+                    <div className="p-6 w-full">
+                      <div className="flex items-center gap-3 mb-2">
+                        <Code className="w-6 h-6 text-blue-400" />
+                        <p className="text-xl font-semibold text-white">Özel Çözümler</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          {submitted && status === 'success' ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="glass rounded-3xl p-12 text-center max-w-2xl mx-auto"
+            >
+              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-green-500/20 flex items-center justify-center">
+                <CheckCircle2 className="w-10 h-10 text-green-400" />
+              </div>
+              <h2 className="text-3xl font-bold mb-4">Mesajınız Gönderildi!</h2>
+              <p className="text-gray-400 mb-8">
+                Mesajınız başarıyla alındı. Ekibimiz çalışma saatleri içinde genellikle birkaç saat içerisinde geri dönüş yapar.
+              </p>
+              <button onClick={() => setSubmitted(false)} className="px-6 py-3 rounded-xl glass glass-hover font-semibold transition-all hover:scale-105">
+                Yeni Mesaj Gönder
+              </button>
+            </motion.div>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="glass rounded-3xl p-8 max-w-4xl mx-auto"
+            >
+              <div className="text-center mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                  Bizimle <span className="gradient-text">İletişime Geçin</span>
+                </h2>
+                <p className="text-gray-400">
+                  Sorularınız mı var? Size yardımcı olmak için buradayız. Formu doldurun, size en kısa sürede dönüş yapalım.
+                </p>
+              </div>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Ad Soyad *</label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-xl glass border border-white/10 focus:border-blue-500 focus:outline-none transition-all"
+                      placeholder="Adınız Soyadınız"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-2">E-posta *</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-xl glass border border-white/10 focus:border-blue-500 focus:outline-none transition-all"
+                      placeholder="ornek@email.com"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Telefon *</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-xl glass border border-white/10 focus:border-blue-500 focus:outline-none transition-all"
+                      placeholder="0538 307 86 35"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium mb-2">Konu *</label>
+                    <select name="subject" value={formData.subject} onChange={handleChange} required className="w-full px-4 py-3 rounded-xl glass border border-white/10 focus:border-blue-500 focus:outline-none transition-all">
+                      <option value="">Konu Seçin</option>
+                      {subjectOptions.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                <div className="hidden" aria-hidden="true">
+                  <label htmlFor="companyWebsite">Şirket Web Sitesi</label>
+                  <input
+                    id="companyWebsite"
+                    type="text"
+                    name="companyWebsite"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={botField}
+                    onChange={(event) => setBotField(event.target.value)}
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium mb-2">Mesajınız *</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={6}
+                    className="w-full px-4 py-3 rounded-xl glass border border-white/10 focus:border-blue-500 focus:outline-none transition-all resize-none"
+                    placeholder="Mesajınızı buraya yazın..."
+                  />
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    id="kvkk-home"
+                    name="kvkk"
+                    checked={formData.kvkk}
+                    onChange={handleChange}
+                    required
+                    className="mt-1 rounded border-white/20 text-blue-500 focus:ring-blue-500"
+                  />
+                  <label htmlFor="kvkk-home" className="text-sm text-gray-400">
+                    Kişisel verilerimin Sekersoft tarafından KVKK kapsamında işlenmesine yönelik aydınlatma metnini okudum ve onaylıyorum.
+                  </label>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={status === 'loading'}
+                  className="w-full py-4 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold shadow-2xl shadow-blue-500/30 transition-all hover:shadow-blue-500/50 hover:scale-105 flex items-center justify-center gap-2 disabled:opacity-70"
+                >
+                  <Send className="w-5 h-5" />
+                  {status === 'loading' ? 'Gönderiliyor...' : 'Mesaj Gönder'}
+                </button>
+
+                {status === 'error' && (
+                  <p className="text-red-400 text-sm bg-red-500/10 border border-red-500/30 rounded-xl p-3">{errorMessage || 'Mesaj gönderilirken bir sorun oluştu. Lütfen tekrar deneyin.'}</p>
+                )}
+              </form>
+            </motion.div>
+          )}
         </div>
       </section>
 

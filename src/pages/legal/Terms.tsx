@@ -132,7 +132,7 @@ const Terms = () => {
               <p className="leading-relaxed">
                 Kullanım koşulları hakkında sorularınız için:<br />
                 E-posta: legal@sekersoft.com<br />
-                Telefon: +90 (212) 123 45 67
+                Telefon: 0538 307 86 35
               </p>
             </section>
           </div>

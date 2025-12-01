@@ -22,6 +22,8 @@ import CookiePolicy from './pages/legal/CookiePolicy'
 import NotFound from './pages/NotFound'
 import Logistics from './pages/products/Logistics'
 import Products from './pages/products/Products'
+import Presentation from './pages/Presentation'
+import ComponentScreenshots from './pages/ComponentScreenshots'
 
 const RouteMetadata = () => {
   const location = useLocation()
@@ -42,6 +44,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
             <Route path="/products/logistics" element={<Logistics />} />
+            <Route path="/presentation" element={<Presentation />} />
+            <Route path="/component-screenshots" element={<ComponentScreenshots />} />
             <Route path="/features" element={<Features />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/pricing" element={<Pricing />} />

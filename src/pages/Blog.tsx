@@ -83,7 +83,7 @@ const Blog = () => {
             <span className="gradient-text">Blog</span> & Haberler
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            Lojistik sektöründeki son gelişmeler, en iyi pratikler ve Sekersoft yeniliklerini keşfedin.
+            Teknoloji, yazılım geliştirme ve dijital dönüşüm üzerine güncel içerikler, en iyi pratikler ve Sekersoft yeniliklerini keşfedin.
           </p>
         </motion.div>
 

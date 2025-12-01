@@ -29,6 +29,7 @@ const Navbar = () => {
     },
     { name: 'Çözümler', path: '/solutions' },
     { name: 'Hakkımızda', path: '/about' },
+    { name: 'Blog', path: '/blog' },
     { name: 'İletişim', path: '/contact' },
   ]
 

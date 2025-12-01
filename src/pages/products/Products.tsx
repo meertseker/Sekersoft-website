@@ -86,7 +86,8 @@ const Products = () => {
                     className="w-full h-full object-cover aspect-video lg:aspect-auto"
                     loading="lazy"
                   />
-                  <div className="absolute top-4 left-4">
+                  <div className="absolute inset-0 bg-black/50"></div>
+                  <div className="absolute top-4 left-4 z-10">
                     <span className="px-3 py-1 rounded-full glass text-xs font-semibold text-blue-400">
                       {product.category}
                     </span>

@@ -134,29 +134,9 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        {/* Contact Methods */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {contactMethods.map((method, index) => (
-            <motion.div key={method.title} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.1 }} className="glass rounded-2xl p-6 text-center glass-hover">
-              <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center">
-                <method.icon className="w-6 h-6 text-blue-400" />
-              </div>
-              <h3 className="font-semibold mb-2">{method.title}</h3>
-              {method.href ? (
-                <a href={method.href} className="text-blue-400 font-semibold mb-2 block">
-                  {method.value}
-                </a>
-              ) : (
-                <p className="text-blue-400 font-semibold mb-2">{method.value}</p>
-              )}
-              <p className="text-sm text-gray-400">{method.description}</p>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Form */}
-          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="glass rounded-3xl p-8">
+        {/* Form - En Üstte */}
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-2xl mx-auto mb-12">
+          <div className="glass rounded-3xl p-8">
             <h2 className="text-2xl font-bold mb-6">Mesaj Gönderin</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -194,7 +174,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-xl glass border border-white/10 focus:border-blue-500 focus:outline-none transition-all"
-                  placeholder="0555 123 45 67"
+                  placeholder="0538 307 86 35"
                 />
               </div>
 
@@ -264,10 +244,32 @@ const Contact = () => {
                 <p className="text-red-400 text-sm bg-red-500/10 border border-red-500/30 rounded-xl p-3">{errorMessage || 'Mesaj gönderilirken bir sorun oluştu. Lütfen tekrar deneyin.'}</p>
               )}
             </form>
-          </motion.div>
+          </div>
+        </motion.div>
 
+        {/* Contact Methods */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {contactMethods.map((method, index) => (
+            <motion.div key={method.title} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: index * 0.1 }} className="glass rounded-2xl p-6 text-center glass-hover">
+              <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center">
+                <method.icon className="w-6 h-6 text-blue-400" />
+              </div>
+              <h3 className="font-semibold mb-2">{method.title}</h3>
+              {method.href ? (
+                <a href={method.href} className="text-blue-400 font-semibold mb-2 block">
+                  {method.value}
+                </a>
+              ) : (
+                <p className="text-blue-400 font-semibold mb-2">{method.value}</p>
+              )}
+              <p className="text-sm text-gray-400">{method.description}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12">
           {/* Info */}
-          <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="space-y-8">
+          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="space-y-8">
             <div className="glass rounded-3xl p-8">
               <h3 className="text-2xl font-bold mb-6">Sıkça Sorulan Sorular</h3>
               <div className="space-y-4">
@@ -295,7 +297,9 @@ const Contact = () => {
                 Demo Talep Et
               </Link>
             </div>
+          </motion.div>
 
+          <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }}>
             <div className="glass rounded-3xl p-8">
               <h3 className="text-xl font-bold mb-4">Adres Bilgileri</h3>
               <div className="flex items-start gap-3">

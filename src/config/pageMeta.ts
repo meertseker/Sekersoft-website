@@ -79,8 +79,8 @@ export const pageMeta: Record<string, PageMeta> = {
     structuredData: [contactPageSchema, breadcrumbSchema([{ name: 'Ana Sayfa', path: '/' }, { name: 'İletişim', path: '/contact' }])],
   },
   '/blog': {
-    title: 'Blog · Lojistik İçgörüleri',
-    description: 'Lojistik operasyonları, maliyet optimizasyonu ve filo yönetimi üzerine güncel makaleler.',
+    title: 'Blog · Sekersoft',
+    description: 'Teknoloji, yazılım geliştirme, dijital dönüşüm ve iş süreçleri üzerine güncel makaleler ve içgörüler.',
   },
   '/support': {
     title: 'Destek Merkezi · SSS ve Kılavuzlar',

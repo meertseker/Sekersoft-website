@@ -28,7 +28,8 @@ import {
   Send,
   BookOpen,
   Video,
-  ExternalLink
+  ExternalLink,
+  PlayCircle
 } from 'lucide-react'
 import { screenshotPaths } from '../../data/screenshots'
 import { siteConfig } from '../../config/site'
@@ -631,6 +632,13 @@ const Logistics = () => {
               14 Günlük Demo Aç
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
+            <Link
+              to="/presentation"
+              className="group px-8 py-4 rounded-2xl glass glass-hover font-semibold transition-all hover:scale-105 flex items-center justify-center gap-2 border border-white/10 hover:border-blue-500/50"
+            >
+              <PlayCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              Sunumu Aç
+            </Link>
             <Link
               to="/contact"
               className="px-8 py-4 rounded-2xl glass glass-hover font-semibold transition-all hover:scale-105 flex items-center justify-center gap-2 border border-white/10"
@@ -1356,7 +1364,7 @@ const Logistics = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 rounded-xl glass border border-white/10 focus:border-blue-500 focus:outline-none transition-all"
-                      placeholder="0555 123 45 67"
+                      placeholder="0538 307 86 35"
                     />
                   </div>
 

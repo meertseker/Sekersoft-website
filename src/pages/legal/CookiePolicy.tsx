@@ -158,7 +158,7 @@ const CookiePolicy = () => {
               <p className="leading-relaxed">
                 Çerez politikamız hakkında sorularınız için:<br />
                 E-posta: privacy@sekersoft.com<br />
-                Telefon: +90 (212) 123 45 67
+                Telefon: 0538 307 86 35
               </p>
             </section>
           </div>

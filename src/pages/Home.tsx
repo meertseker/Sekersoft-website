@@ -91,7 +91,7 @@ const Home = () => {
   const softwareServices = [
     {
       icon: Code,
-      title: 'Özel Yazılım Geliştirme',
+      title: 'Özel Yazılım Çözümleri',
       description: 'İşletmenizin ihtiyaçlarına özel, tamamen size özel yazılım çözümleri geliştiriyoruz.',
       accent: {
         bg: 'linear-gradient(135deg, rgba(10,132,255,0.22), rgba(123,97,255,0.18))',
@@ -211,7 +211,7 @@ const Home = () => {
             >
               <Code className="w-4 h-4 text-blue-400" />
               <span className="text-xs sm:text-sm font-semibold tracking-wide uppercase text-gray-300">
-                Özel Yazılım Geliştirme Şirketi
+                Özel Yazılım Çözümleri
               </span>
             </motion.div>
 
@@ -474,7 +474,7 @@ const Home = () => {
                 <div className="aspect-square rounded-2xl overflow-hidden relative group">
                   <img
                     src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80&auto=format&fit=crop"
-                    alt="Özel Yazılım Geliştirme ve Çözümler"
+                    alt="Özel Yazılım Çözümleri"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
                   />

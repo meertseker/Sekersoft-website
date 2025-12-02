@@ -10,7 +10,7 @@ const siteUrl = normalizeUrl(import.meta.env.VITE_SITE_URL)
 export const siteConfig = {
   name: 'Sekersoft',
   shortName: 'Sekersoft',
-  tagline: 'Özel Yazılım Geliştirme',
+  tagline: 'Özel Yazılım Çözümleri',
   description: 'Sekersoft, işletmenizin ihtiyaçlarına özel yazılım çözümleri geliştiren bir teknoloji şirketidir. Masaüstü, web ve mobil uygulamalardan veritabanı sistemlerine kadar geniş bir yelpazede hizmet sunuyoruz. İlk ürünümüz Sekersoft Lojistik ile taşımacılık sektörüne offline, güvenli ve kullanıcı dostu çözümler getiriyoruz.',
   url: siteUrl,
   contact: {
@@ -35,7 +35,7 @@ export const siteConfig = {
     twitter: 'https://x.com/sekersoft',
   },
   metadata: {
-    defaultTitle: 'Sekersoft · Özel Yazılım Geliştirme Şirketi',
+    defaultTitle: 'Sekersoft · Özel Yazılım Çözümleri',
     defaultDescription: 'Sekersoft, işletmenizin ihtiyaçlarına özel yazılım çözümleri geliştiren bir teknoloji şirketidir. Masaüstü, web ve mobil uygulamalardan veritabanı sistemlerine kadar geniş bir yelpazede hizmet sunuyoruz. İlk ürünümüz Sekersoft Lojistik ile taşımacılık sektörüne offline, güvenli ve kullanıcı dostu çözümler getiriyoruz.',
     keywords: [
       'Sekersoft',

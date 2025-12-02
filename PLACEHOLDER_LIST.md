@@ -62,7 +62,7 @@
 
 ### Site Metadata (`site.ts`)
 - `name`: `Sekersoft`
-- `tagline`: `Özel Yazılım Geliştirme`
+- `tagline`: `Özel Yazılım Çözümleri`
 - `description`: Uzun açıklama metni
 - Durum: ✅ Mevcut, güncellenebilir
 

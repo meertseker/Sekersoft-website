@@ -18,7 +18,7 @@ const Solutions = () => {
   const solutions = [
     {
       icon: Code,
-      title: 'Özel Yazılım Geliştirme',
+      title: 'Özel Yazılım Çözümleri',
       description: 'İşletmenizin ihtiyaçlarına özel, tamamen size özel yazılım çözümleri geliştiriyoruz.',
       features: [
         'İşletmenize özel çözümler',
@@ -98,7 +98,7 @@ const Solutions = () => {
   ]
 
   const customSoftware = {
-    title: 'Özel Yazılım Geliştirme',
+    title: 'Özel Yazılım Çözümleri',
     description: 'Standart yazılımlar ihtiyaçlarınızı karşılamıyor mu? Size özel çözümler geliştiriyoruz.',
     process: [
       {

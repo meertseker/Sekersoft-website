@@ -22,7 +22,7 @@ const defaultMeta: PageMeta = {
 export const pageMeta: Record<string, PageMeta> = {
   default: defaultMeta,
   '/': {
-    title: 'Sekersoft · Özel Yazılım Geliştirme Şirketi',
+    title: 'Sekersoft · Özel Yazılım Çözümleri',
     description:
       'Sekersoft, işletmenizin ihtiyaçlarına özel yazılım çözümleri geliştiren bir teknoloji şirketidir. Masaüstü, web ve mobil uygulamalardan veritabanı sistemlerine kadar geniş bir yelpazede hizmet sunuyoruz.',
     keywords: siteConfig.metadata.keywords,

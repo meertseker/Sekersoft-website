@@ -49,12 +49,12 @@ export const pageMeta: Record<string, PageMeta> = {
     image: '/screenshots/04-reports.png',
   },
   '/solutions': {
-    title: 'Sektörel Çözümler · Sekersoft Lojistik',
-    description: 'Taşımacılık işletmeleri için özelleştirilmiş iş akışları, maliyet kurguları ve raporlama çözümleri.',
+    title: 'Yazılım Çözümlerimiz · Sekersoft',
+    description: 'Özel yazılım geliştirme, masaüstü uygulamaları, web ve mobil çözümler. İşletmenizin dijital dönüşümü için uçtan uca hizmetler.',
   },
   '/pricing': {
     title: 'Fiyatlandırma · Tek Seferlik Lisans',
-    description: 'Başlangıç, Profesyonel ve Kurumsal paketlerle ihtiyaçlarınıza uygun fiyatlandırma seçeneklerini keşfedin.',
+    description: 'Sekersoft Lojistik tek seferlik lisans modeliyle sunulur: 32.000 TL + KDV kurulum, 2. yıldan itibaren yıllık bakım ve güncelleme paketi.',
   },
   '/about': {
     title: 'Hakkımızda · Sekersoft',

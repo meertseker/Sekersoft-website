@@ -6,12 +6,11 @@ const DIST_DIR = resolve(process.cwd(), 'dist')
 
 const staticRoutes = [
   '/',
-  '/features',
+  '/products',
+  '/products/logistics',
   '/solutions',
-  '/pricing',
   '/about',
   '/testimonials',
-  '/demo',
   '/resources',
   '/contact',
   '/blog',

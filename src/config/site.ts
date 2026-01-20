@@ -13,6 +13,11 @@ export const siteConfig = {
   tagline: 'Özel Yazılım Geliştirme',
   description: 'Sekersoft, işletmenizin ihtiyaçlarına özel yazılım çözümleri geliştiren bir teknoloji şirketidir. Masaüstü, web ve mobil uygulamalardan veritabanı sistemlerine kadar geniş bir yelpazede hizmet sunuyoruz. İlk ürünümüz Sekersoft Lojistik ile taşımacılık sektörüne offline, güvenli ve kullanıcı dostu çözümler getiriyoruz.',
   url: siteUrl,
+  analytics: {
+    gtmId: import.meta.env.VITE_GTM_ID as string | undefined,
+    ga4Id: import.meta.env.VITE_GA4_ID as string | undefined,
+    metaPixelId: import.meta.env.VITE_META_PIXEL_ID as string | undefined,
+  },
   contact: {
     email: 'info@sekersoft.com',
     phone: '0538 307 86 35',

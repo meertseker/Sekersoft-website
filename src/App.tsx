@@ -3,6 +3,8 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import Seo from './components/Seo'
+import CookieConsent from './components/CookieConsent'
+import Tracking from './components/Tracking'
 import { pageMeta } from './config/pageMeta'
 import Home from './pages/Home'
 import Features from './pages/Features'
@@ -37,6 +39,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <RouteMetadata />
+      <Tracking />
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-grow">
@@ -65,6 +68,7 @@ function App() {
         </main>
         <Footer />
       </div>
+      <CookieConsent />
     </Router>
   )
 }

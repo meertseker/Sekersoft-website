@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { 
   Truck, 
   Package, 
@@ -34,6 +34,8 @@ import {
 import { screenshotPaths } from '../../data/screenshots'
 import { siteConfig } from '../../config/site'
 import { submitLeadForm } from '../../lib/forms'
+import { trackEvent } from '../../lib/analytics'
+import FloatingContactCTA from '../../components/FloatingContactCTA'
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error'
 
@@ -44,6 +46,7 @@ const initialFormState = {
   company: '',
   vehicleCount: '',
   message: '',
+  kvkk: false,
 }
 
 const Logistics = () => {
@@ -535,6 +538,15 @@ const Logistics = () => {
   const [status, setStatus] = useState<FormStatus>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const [botField, setBotField] = useState('')
+  const startedRef = useRef(false)
+
+  const vehicleCountRequired = useMemo(() => {
+    try {
+      return new URLSearchParams(window.location.search).get('vehicle_required') === '1'
+    } catch {
+      return false
+    }
+  }, [])
 
   const demoFeatures = [
     'Sipariş yönetimi sistemini test edin',
@@ -555,12 +567,15 @@ const Logistics = () => {
     setStatus('loading')
     setErrorMessage('')
 
+    trackEvent('demo_submit_attempt', { formName: 'demo' })
+
     try {
       if (siteConfig.forms.demo) {
         await submitLeadForm({
           endpoint: siteConfig.forms.demo,
           payload: {
             ...formData,
+            kvkk: formData.kvkk ? 'on' : 'off',
             formName: 'demo',
           },
         })
@@ -571,9 +586,16 @@ const Logistics = () => {
       setSubmitted(true)
       setStatus('success')
       setFormData(initialFormState)
+
+      trackEvent('demo_submit_success', {
+        formName: 'demo',
+        vehicleCount: formData.vehicleCount || undefined,
+        company: formData.company || undefined,
+      })
     } catch (error) {
       setStatus('error')
       setErrorMessage(error instanceof Error ? error.message : 'Talebiniz gönderilirken bir sorun oluştu. Lütfen tekrar deneyin.')
+      trackEvent('demo_submit_error', { formName: 'demo' })
     }
   }
 
@@ -587,8 +609,15 @@ const Logistics = () => {
     }))
   }
 
+  const handleStart = () => {
+    if (startedRef.current) return
+    startedRef.current = true
+    trackEvent('demo_form_start', { formName: 'demo' })
+  }
+
   return (
     <div className="min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <FloatingContactCTA source="logistics" />
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto mb-20">
         <motion.div
@@ -628,6 +657,7 @@ const Logistics = () => {
               href="#demo"
               className="group px-8 py-4 rounded-2xl text-white font-semibold shadow-2xl shadow-blue-500/30 transition-all hover:shadow-blue-500/50 hover:scale-105 hover:opacity-95 flex items-center justify-center gap-2"
               style={{ backgroundImage: greetingGradient }}
+              onClick={() => trackEvent('cta_click_demo', { source: 'logistics_hero' })}
             >
               14 Günlük Demo Aç
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -1319,6 +1349,13 @@ const Logistics = () => {
                 className="glass rounded-3xl p-8"
               >
                 <h3 className="text-2xl font-bold mb-6">İletişim Bilgileriniz</h3>
+                <div className="mb-6 glass rounded-2xl p-4 border border-white/10 bg-gradient-to-br from-blue-500/10 to-cyan-500/10">
+                  <p className="text-sm text-gray-300">
+                    <span className="font-semibold text-white">Tek seferlik lisans:</span> 32.000 TL + KDV ·{' '}
+                    <span className="text-gray-400">2. yıldan itibaren yıllık 8.000 TL bakım</span>
+                  </p>
+                  <p className="text-xs text-gray-500 mt-2">Demo ücretsizdir. Genellikle 24 saat içinde geri dönüş yapılır.</p>
+                </div>
                 <form onSubmit={handleDemoSubmit} className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium mb-2 flex items-center gap-2">
@@ -1330,6 +1367,7 @@ const Logistics = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
+                      onFocus={handleStart}
                       required
                       className="w-full px-4 py-3 rounded-xl glass border border-white/10 focus:border-blue-500 focus:outline-none transition-all"
                       placeholder="Ahmet Yılmaz"
@@ -1346,6 +1384,7 @@ const Logistics = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
+                      onFocus={handleStart}
                       required
                       className="w-full px-4 py-3 rounded-xl glass border border-white/10 focus:border-blue-500 focus:outline-none transition-all"
                       placeholder="ornek@email.com"
@@ -1362,6 +1401,7 @@ const Logistics = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
+                      onFocus={handleStart}
                       required
                       className="w-full px-4 py-3 rounded-xl glass border border-white/10 focus:border-blue-500 focus:outline-none transition-all"
                       placeholder="0538 307 86 35"
@@ -1378,6 +1418,7 @@ const Logistics = () => {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
+                      onFocus={handleStart}
                       className="w-full px-4 py-3 rounded-xl glass border border-white/10 focus:border-blue-500 focus:outline-none transition-all"
                       placeholder="Şirket Adınız"
                     />
@@ -1392,6 +1433,8 @@ const Logistics = () => {
                       name="vehicleCount"
                       value={formData.vehicleCount}
                       onChange={handleChange}
+                      onFocus={handleStart}
+                      required={vehicleCountRequired}
                       className="w-full px-4 py-3 rounded-xl glass border border-white/10 focus:border-blue-500 focus:outline-none transition-all"
                     >
                       <option value="">Seçiniz</option>
@@ -1400,6 +1443,7 @@ const Logistics = () => {
                       <option value="6-10">6-10 Araç</option>
                       <option value="10+">10+ Araç</option>
                     </select>
+                    {vehicleCountRequired && <p className="text-xs text-gray-500 mt-2">Bu kampanya varyantında araç sayısı zorunludur.</p>}
                   </div>
 
                   <div className="hidden" aria-hidden="true">
@@ -1421,10 +1465,31 @@ const Logistics = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
+                      onFocus={handleStart}
                       rows={4}
                       className="w-full px-4 py-3 rounded-xl glass border border-white/10 focus:border-blue-500 focus:outline-none transition-all resize-none"
                       placeholder="Özel talepleriniz veya sorularınız varsa buraya yazabilirsiniz..."
                     />
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      id="kvkk-demo"
+                      name="kvkk"
+                      checked={formData.kvkk}
+                      onChange={handleChange}
+                      onFocus={handleStart}
+                      required
+                      className="mt-1 rounded border-white/20 text-blue-500 focus:ring-blue-500"
+                    />
+                    <label htmlFor="kvkk-demo" className="text-sm text-gray-400">
+                      Kişisel verilerimin Sekersoft tarafından KVKK kapsamında işlenmesine yönelik{' '}
+                      <Link to="/kvkk" className="text-blue-400 hover:text-blue-300 font-semibold">
+                        aydınlatma metnini
+                      </Link>{' '}
+                      okudum ve onaylıyorum.
+                    </label>
                   </div>
 
                   <button
@@ -1453,6 +1518,22 @@ const Logistics = () => {
                 viewport={{ once: true }}
                 className="space-y-8"
               >
+                <div className="glass rounded-3xl p-8 border border-white/10">
+                  <h3 className="text-xl font-bold mb-4">Kısa Özet</h3>
+                  <div className="space-y-3">
+                    {[
+                      'Offline çalışma: veriler bilgisayarınızda kalır',
+                      'Otomatik maliyet hesabı ile kârlılığı anında görün',
+                      'Tek seferlik lisans: abonelik yok',
+                      'Kurulum & onboarding: uzaktan destek',
+                    ].map((item) => (
+                      <div key={item} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-300">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
                 <div className="glass rounded-3xl p-8">
                   <h3 className="text-2xl font-bold mb-6">Demo&apos;da Neler Var?</h3>
                   <ul className="space-y-4">

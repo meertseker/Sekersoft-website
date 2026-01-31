@@ -23,13 +23,11 @@ export default defineConfig({
     },
     // Source maps disabled for production
     sourcemap: false,
-    // Minify
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
+    // Minify with esbuild (Vite's default, faster than terser)
+    minify: 'esbuild',
+    // Drop console.log and debugger in production
+    esbuild: {
+      drop: ['console', 'debugger'],
     },
     // Chunk size warnings
     chunkSizeWarningLimit: 1000,

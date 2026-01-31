@@ -13,6 +13,7 @@ import {
   CheckCircle2,
   ArrowRight
 } from 'lucide-react'
+import FloatingContactCTA from '../components/FloatingContactCTA'
 
 const Solutions = () => {
   const solutions = [
@@ -154,6 +155,7 @@ const Solutions = () => {
 
   return (
     <div className="min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <FloatingContactCTA source="solutions" />
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div

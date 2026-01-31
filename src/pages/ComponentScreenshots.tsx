@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react'
 import html2canvas from 'html2canvas'
 import { Download, DownloadCloud, TrendingUp, Truck, Activity, BarChart3, DollarSign, Package, Zap } from 'lucide-react'
+import FloatingContactCTA from '../components/FloatingContactCTA'
 
 // Mock data for charts
 const mockChartData = [
@@ -180,6 +181,7 @@ export default function ComponentScreenshots() {
 
   return (
     <div className="min-h-screen bg-[#1C1C1E] p-8">
+      <FloatingContactCTA source="component-screenshots" />
       <div className="max-w-7xl mx-auto">
         <div className="mb-8 text-center">
           <h1 className="text-4xl font-bold text-white mb-4">Component Screenshots</h1>

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { siteConfig } from '../config/site'
 import { submitLeadForm } from '../lib/forms'
+import FloatingContactCTA from '../components/FloatingContactCTA'
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error'
 
@@ -202,6 +203,7 @@ const Support = () => {
 
   return (
     <div className="min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <FloatingContactCTA source="support" />
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div

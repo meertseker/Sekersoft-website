@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Calendar, Clock, ArrowRight, Search } from 'lucide-react'
 import { screenshotPaths } from '../data/screenshots'
+import FloatingContactCTA from '../components/FloatingContactCTA'
 
 const Blog = () => {
   const posts = [
@@ -72,6 +73,7 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <FloatingContactCTA source="blog" />
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div

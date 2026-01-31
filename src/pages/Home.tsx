@@ -20,6 +20,7 @@ import {
 import { screenshotPaths } from '../data/screenshots'
 import { siteConfig } from '../config/site'
 import { submitLeadForm } from '../lib/forms'
+import FloatingContactCTA from '../components/FloatingContactCTA'
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error'
 
@@ -170,6 +171,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
+      <FloatingContactCTA source="home" />
       {/* Sekersoft Hero Section - Yazılım Hizmetleri */}
       <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Animated Background */}

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { Mail, Phone, MapPin, Send, MessageCircle, Clock, CheckCircle2 } from 'lucide-react'
 import { siteConfig } from '../config/site'
 import { submitLeadForm } from '../lib/forms'
+import FloatingContactCTA from '../components/FloatingContactCTA'
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error'
 
@@ -105,6 +106,7 @@ const Contact = () => {
   if (submitted && status === 'success') {
     return (
       <div className="min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+        <FloatingContactCTA source="contact" />
         <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="glass rounded-3xl p-12 text-center max-w-2xl">
           <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-green-500/20 flex items-center justify-center">
             <CheckCircle2 className="w-10 h-10 text-green-400" />
@@ -123,6 +125,7 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <FloatingContactCTA source="contact" />
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">

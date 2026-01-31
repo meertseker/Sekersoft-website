@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Star, Quote, Truck, Building2, Package, Play } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { screenshotPaths } from '../data/screenshots'
+import FloatingContactCTA from '../components/FloatingContactCTA'
 
 const Testimonials = () => {
   const testimonials = [
@@ -76,6 +77,7 @@ const Testimonials = () => {
 
   return (
     <div className="min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <FloatingContactCTA source="testimonials" />
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div

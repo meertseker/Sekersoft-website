@@ -1,4 +1,4 @@
-import { Phone, MessageCircle } from 'lucide-react'
+import { Mail, MessageCircle } from 'lucide-react'
 import { siteConfig } from '../config/site'
 import { trackEvent } from '../lib/analytics'
 
@@ -13,19 +13,19 @@ const FloatingContactCTA = ({ source = 'floating' }: Props) => {
         href={siteConfig.contact.whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-12 h-12 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 text-white shadow-2xl shadow-blue-500/30 flex items-center justify-center hover:scale-105 transition-all"
+        className="w-12 h-12 rounded-2xl bg-gradient-to-r from-green-500 to-green-600 text-white shadow-2xl shadow-green-500/30 flex items-center justify-center hover:scale-105 transition-all"
         aria-label="WhatsApp ile iletişim"
         onClick={() => trackEvent('whatsapp_click', { source })}
       >
         <MessageCircle className="w-6 h-6" />
       </a>
       <a
-        href={`tel:${siteConfig.contact.phoneHref}`}
+        href={`mailto:${siteConfig.contact.email}`}
         className="w-12 h-12 rounded-2xl glass glass-hover shadow-xl flex items-center justify-center"
-        aria-label="Telefon ile ara"
-        onClick={() => trackEvent('phone_click', { source })}
+        aria-label="E-posta gönder"
+        onClick={() => trackEvent('email_click', { source })}
       >
-        <Phone className="w-6 h-6 text-blue-400" />
+        <Mail className="w-6 h-6 text-blue-400" />
       </a>
     </div>
   )

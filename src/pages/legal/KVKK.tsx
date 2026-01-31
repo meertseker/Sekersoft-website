@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion'
 import { ShieldCheck } from 'lucide-react'
+import FloatingContactCTA from '../../components/FloatingContactCTA'
 
 const KVKK = () => {
   return (
     <div className="min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <FloatingContactCTA source="kvkk" />
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

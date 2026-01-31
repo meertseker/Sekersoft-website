@@ -1,22 +1,28 @@
 {
-  "name": "Sekersoft Logistics OS",
+  "name": "Sekersoft · Özel Yazılım Geliştirme",
   "short_name": "Sekersoft",
+  "description": "İşletmenizin ihtiyaçlarına özel yazılım çözümleri. Masaüstü, web ve mobil uygulamalar.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#010409",
   "theme_color": "#0A84FF",
-  "description": "Sekersoft Logistics OS · Offline çalışan lojistik ve nakliye yönetim yazılımı.",
+  "categories": ["business", "productivity", "software"],
+  "lang": "tr",
+  "dir": "ltr",
   "icons": [
     {
       "src": "/logo.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
       "src": "/logo.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

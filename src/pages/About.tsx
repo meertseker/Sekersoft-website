@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Target, Shield, Heart, Code, Database, Monitor, Zap, CheckCircle2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import FloatingContactCTA from '../components/FloatingContactCTA'
 
 const About = () => {
   const values = [
@@ -62,6 +63,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <FloatingContactCTA source="about" />
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div

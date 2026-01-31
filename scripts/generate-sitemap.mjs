@@ -5,29 +5,28 @@ const SITE_URL = process.env.VITE_SITE_URL?.replace(/\/$/, '') || 'https://www.s
 const DIST_DIR = resolve(process.cwd(), 'dist')
 
 const staticRoutes = [
-  '/',
-  '/products',
-  '/products/logistics',
-  '/solutions',
-  '/about',
-  '/testimonials',
-  '/resources',
-  '/contact',
-  '/blog',
-  '/support',
-  '/privacy',
-  '/terms',
-  '/kvkk',
-  '/cookie-policy',
+  { path: '/', changefreq: 'daily', priority: '1.0' },
+  { path: '/products/logistics', changefreq: 'weekly', priority: '0.9' },
+  { path: '/products', changefreq: 'weekly', priority: '0.8' },
+  { path: '/contact', changefreq: 'monthly', priority: '0.8' },
+  { path: '/solutions', changefreq: 'weekly', priority: '0.7' },
+  { path: '/about', changefreq: 'monthly', priority: '0.7' },
+  { path: '/testimonials', changefreq: 'weekly', priority: '0.7' },
+  { path: '/blog', changefreq: 'weekly', priority: '0.7' },
+  { path: '/support', changefreq: 'weekly', priority: '0.7' },
+  { path: '/privacy', changefreq: 'yearly', priority: '0.3' },
+  { path: '/terms', changefreq: 'yearly', priority: '0.3' },
+  { path: '/kvkk', changefreq: 'yearly', priority: '0.3' },
+  { path: '/cookie-policy', changefreq: 'yearly', priority: '0.3' },
 ]
 
-const createUrlEntry = (path) => {
-  const loc = path.startsWith('http') ? path : `${SITE_URL}${path}`
+const createUrlEntry = (route) => {
+  const loc = route.path.startsWith('http') ? route.path : `${SITE_URL}${route.path}`
   return `  <url>
     <loc>${loc}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>${path === '/' ? 'daily' : 'weekly'}</changefreq>
-    <priority>${path === '/' ? '1.0' : '0.7'}</priority>
+    <changefreq>${route.changefreq}</changefreq>
+    <priority>${route.priority}</priority>
   </url>`
 }
 

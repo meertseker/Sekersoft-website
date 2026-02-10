@@ -225,8 +225,8 @@ const Home = () => {
                   transition={{ delay: 0.2, duration: 0.6 }}
                 >
                   <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.1] tracking-tight" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}>
-                    Özel Yazılım<br />
-                    <span className="gradient-text">Çözümleri</span>
+                    İşletmeniz için<br />
+                    <span className="gradient-text">özel yazılım çözümleri</span>
                   </h1>
 
                   <p className="text-base md:text-lg text-white mb-8 leading-relaxed max-w-2xl" style={{ textShadow: '0 2px 15px rgba(0,0,0,0.5)' }}>

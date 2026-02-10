@@ -8,8 +8,8 @@ const normalizeUrl = (url?: string) => {
 const siteUrl = normalizeUrl(import.meta.env.VITE_SITE_URL)
 
 export const siteConfig = {
-  name: 'Sekersoft',
-  shortName: 'Sekersoft',
+  name: 'Şekersoft',
+  shortName: 'Şekersoft',
   tagline: 'Özel Yazılım Çözümleri',
   description: 'Sekersoft, işletmenizin ihtiyaçlarına özel yazılım çözümleri geliştiren bir teknoloji şirketidir. Masaüstü, web ve mobil uygulamalardan veritabanı sistemlerine kadar geniş bir yelpazede hizmet sunuyoruz. İlk ürünümüz Sekersoft Lojistik ile taşımacılık sektörüne offline, güvenli ve kullanıcı dostu çözümler getiriyoruz.',
   url: siteUrl,

@@ -71,18 +71,18 @@ const Blog = () => {
   ]
 
   return (
-    <div className="min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen pt-20 sm:pt-24 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-12"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
             <span className="gradient-text">Blog</span> & Haberler
           </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Teknoloji, yazılım geliştirme ve dijital dönüşüm üzerine güncel içerikler, en iyi pratikler ve Sekersoft yeniliklerini keşfedin.
           </p>
         </motion.div>
@@ -92,9 +92,9 @@ const Blog = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="mb-8 md:mb-12"
         >
-          <div className="glass rounded-2xl p-6">
+          <div className="bento-card glass-liquid p-4 md:p-6">
             <div className="flex flex-col md:flex-row gap-4">
               {/* Search */}
               <div className="flex-1 relative">
@@ -102,7 +102,7 @@ const Blog = () => {
                 <input
                   type="text"
                   placeholder="Blog yazılarında ara..."
-                  className="w-full pl-12 pr-4 py-3 rounded-xl glass border border-white/20 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all"
+                  className="w-full pl-12 pr-4 py-2.5 md:py-3 rounded-xl glass-liquid border border-white/10 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all text-sm md:text-base"
                 />
               </div>
               
@@ -111,7 +111,7 @@ const Blog = () => {
                 {categories.map((category) => (
                   <button
                     key={category}
-                    className="px-4 py-2 rounded-lg glass glass-hover text-sm font-medium whitespace-nowrap transition-all hover:scale-105"
+                    className="px-3 md:px-4 py-2 rounded-lg glass-liquid text-xs md:text-sm font-medium whitespace-nowrap transition-all hover:scale-105"
                   >
                     {category}
                   </button>
@@ -129,9 +129,9 @@ const Blog = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
-            className="glass rounded-3xl overflow-hidden mb-12 group cursor-pointer"
+            className="bento-card glass-liquid-strong overflow-hidden mb-8 md:mb-12 group cursor-pointer"
           >
-            <div className="grid lg:grid-cols-2 gap-8 p-8">
+            <div className="grid lg:grid-cols-2 gap-6 md:gap-8 p-6 md:p-8">
               <div className="aspect-video rounded-2xl overflow-hidden border border-white/10 group-hover:scale-105 transition-transform duration-500">
                 <img
                   src={post.image}
@@ -173,7 +173,7 @@ const Blog = () => {
         ))}
 
         {/* Blog Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {posts.filter(p => !p.featured).map((post, index) => (
             <motion.article
               key={post.title}
@@ -181,7 +181,7 @@ const Blog = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="glass rounded-2xl overflow-hidden group cursor-pointer glass-hover"
+              className="bento-card glass-liquid overflow-hidden group cursor-pointer"
             >
               <div className="aspect-video overflow-hidden border-b border-white/5">
                 <img
@@ -225,21 +225,21 @@ const Blog = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex justify-center gap-2 mt-12"
+          className="flex justify-center gap-2 mt-8 md:mt-12"
         >
-          <button className="px-4 py-2 rounded-lg glass glass-hover font-medium">
+          <button className="px-3 md:px-4 py-2 rounded-lg glass-liquid text-sm md:text-base font-medium">
             Önceki
           </button>
-          <button className="px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 font-medium">
+          <button className="px-3 md:px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 text-sm md:text-base font-medium">
             1
           </button>
-          <button className="px-4 py-2 rounded-lg glass glass-hover font-medium">
+          <button className="px-3 md:px-4 py-2 rounded-lg glass-liquid text-sm md:text-base font-medium">
             2
           </button>
-          <button className="px-4 py-2 rounded-lg glass glass-hover font-medium">
+          <button className="px-3 md:px-4 py-2 rounded-lg glass-liquid text-sm md:text-base font-medium">
             3
           </button>
-          <button className="px-4 py-2 rounded-lg glass glass-hover font-medium">
+          <button className="px-3 md:px-4 py-2 rounded-lg glass-liquid text-sm md:text-base font-medium">
             Sonraki
           </button>
         </motion.div>
@@ -249,24 +249,24 @@ const Blog = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-20"
+          className="mt-12 md:mt-20"
         >
-          <div className="glass rounded-3xl p-12 text-center">
-            <h2 className="text-3xl font-bold mb-4">
+          <div className="bento-card glass-liquid-strong p-6 md:p-12 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">
               Blog Güncellemelerini <span className="gradient-text">Kaçırmayın</span>
             </h2>
-            <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+            <p className="text-sm md:text-base text-gray-400 mb-6 md:mb-8 max-w-2xl mx-auto">
               Yeni blog yazılarımızdan ve sektör haberlerinden ilk siz haberdar olun.
             </p>
             <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="E-posta adresiniz"
-                className="flex-1 px-4 py-3 rounded-xl glass border border-white/20 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all"
+                className="flex-1 px-4 py-2.5 md:py-3 rounded-xl glass-liquid border border-white/10 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all text-sm md:text-base"
               />
               <button
                 type="submit"
-                className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-medium shadow-lg shadow-blue-500/30 transition-all hover:shadow-blue-500/50 hover:scale-105"
+                className="px-5 md:px-6 py-2.5 md:py-3 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-medium shadow-lg shadow-blue-500/30 transition-all hover:shadow-blue-500/50 hover:scale-105 text-sm md:text-base"
               >
                 Abone Ol
               </button>

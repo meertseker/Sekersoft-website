@@ -61,18 +61,18 @@ const About = () => {
   ]
 
   return (
-    <div className="min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen pt-20 sm:pt-24 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
             Sekersoft <span className="gradient-text">Hakkında</span>
           </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Sekersoft, işletmelerin dijital dönüşümüne özel yazılım çözümleri sunan bir teknoloji şirketidir.
             Masaüstü, web ve mobil uygulamalardan veritabanı sistemlerine kadar geniş bir yelpazede hizmet veriyoruz.
           </p>
@@ -83,32 +83,43 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="glass rounded-3xl p-12 mb-20"
+          className="mb-8 sm:mb-12 lg:mb-16"
         >
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center mb-6">
-                <Target className="w-8 h-8 text-blue-400" />
+          <div className="bento-card glass-liquid-strong p-6 md:p-12">
+            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+              <div>
+                <div className="w-12 h-12 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-4 md:mb-6"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(10,132,255,0.25), rgba(44,217,197,0.25))',
+                    boxShadow: '0 10px 30px rgba(10,132,255,0.2)'
+                  }}
+                >
+                  <Target className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Misyonumuz</h2>
+                <p className="text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-6">
+                  Sekersoft olarak, işletmelerin dijital dönüşüm yolculuğunda yanlarında olmayı hedefliyoruz.
+                  Standart yazılımların yetersiz kaldığı noktalarda, işletmenizin ihtiyaçlarına özel çözümler geliştiriyoruz.
+                </p>
+                <p className="text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-6">
+                  Modern teknolojiler kullanarak, kullanıcı dostu, güvenli ve ölçeklenebilir yazılım çözümleri sunuyoruz.
+                  Masaüstü uygulamalardan web platformlarına, mobil uygulamalardan veritabanı sistemlerine kadar
+                  geniş bir yelpazede hizmet veriyoruz.
+                </p>
+                <p className="text-sm md:text-base text-gray-400 leading-relaxed">
+                  İlk ürünümüz olan <Link to="/products/logistics" className="text-blue-400 hover:text-blue-300">Sekersoft Lojistik</Link> ile
+                  taşımacılık sektörüne offline, güvenli ve kullanıcı dostu bir çözüm getirdik. 
+                  Gelecekte daha fazla sektör için özel çözümler geliştirmeye devam edeceğiz.
+                </p>
               </div>
-              <h2 className="text-3xl font-bold mb-4">Misyonumuz</h2>
-              <p className="text-gray-400 leading-relaxed mb-6">
-                Sekersoft olarak, işletmelerin dijital dönüşüm yolculuğunda yanlarında olmayı hedefliyoruz.
-                Standart yazılımların yetersiz kaldığı noktalarda, işletmenizin ihtiyaçlarına özel çözümler geliştiriyoruz.
-              </p>
-              <p className="text-gray-400 leading-relaxed mb-6">
-                Modern teknolojiler kullanarak, kullanıcı dostu, güvenli ve ölçeklenebilir yazılım çözümleri sunuyoruz.
-                Masaüstü uygulamalardan web platformlarına, mobil uygulamalardan veritabanı sistemlerine kadar
-                geniş bir yelpazede hizmet veriyoruz.
-              </p>
-              <p className="text-gray-400 leading-relaxed">
-                İlk ürünümüz olan <Link to="/products/logistics" className="text-blue-400 hover:text-blue-300">Sekersoft Lojistik</Link> ile
-                taşımacılık sektörüne offline, güvenli ve kullanıcı dostu bir çözüm getirdik. 
-                Gelecekte daha fazla sektör için özel çözümler geliştirmeye devam edeceğiz.
-              </p>
-            </div>
-            <div className="glass rounded-2xl p-8">
-              <div className="rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center aspect-square">
-                <Code className="w-24 h-24 text-blue-400" />
+              <div className="bento-card glass-liquid p-6 md:p-8">
+                <div className="rounded-xl flex items-center justify-center aspect-square"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(10,132,255,0.2), rgba(44,217,197,0.2))'
+                  }}
+                >
+                  <Code className="w-16 h-16 md:w-24 md:h-24 text-blue-400" />
+                </div>
               </div>
             </div>
           </div>
@@ -119,12 +130,12 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-20"
+          className="mb-8 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">
             Temel <span className="gradient-text">Değerlerimiz</span>
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
@@ -132,13 +143,18 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="glass rounded-2xl p-6 glass-hover"
+                className="bento-card glass-liquid p-4 md:p-6"
               >
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center mb-4">
-                  <value.icon className="w-6 h-6 text-blue-400" />
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center mb-3 md:mb-4"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(10,132,255,0.25), rgba(44,217,197,0.25))',
+                    boxShadow: '0 8px 25px rgba(10,132,255,0.15)'
+                  }}
+                >
+                  <value.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{value.title}</h3>
-                <p className="text-sm text-gray-400">{value.description}</p>
+                <h3 className="text-base md:text-xl font-semibold mb-1 md:mb-2">{value.title}</h3>
+                <p className="text-xs md:text-sm text-gray-400">{value.description}</p>
               </motion.div>
             ))}
           </div>
@@ -149,12 +165,12 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-20"
+          className="mb-8 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">
             Modern <span className="gradient-text">Teknoloji</span>
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {techStack.map((tech, index) => (
               <motion.div
                 key={tech.name}
@@ -162,17 +178,22 @@ const About = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="glass rounded-2xl p-6 text-center glass-hover"
+                className="bento-card glass-liquid p-4 md:p-6 text-center"
               >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center">
-                  <tech.icon className="w-8 h-8 text-blue-400" />
+                <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-3 md:mb-4 rounded-xl flex items-center justify-center"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(10,132,255,0.25), rgba(44,217,197,0.25))',
+                    boxShadow: '0 10px 30px rgba(10,132,255,0.2)'
+                  }}
+                >
+                  <tech.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{tech.name}</h3>
-                <p className="text-sm text-gray-400">{tech.description}</p>
+                <h3 className="text-base md:text-xl font-semibold mb-1 md:mb-2">{tech.name}</h3>
+                <p className="text-xs md:text-sm text-gray-400">{tech.description}</p>
               </motion.div>
             ))}
           </div>
-          <p className="text-center text-gray-400 mt-8">
+          <p className="text-center text-gray-400 mt-6 md:mt-8 text-sm md:text-base">
             Sekersoft, modern teknolojiler ve best practice&apos;ler kullanarak özel yazılım çözümleri geliştirir.
             Her projede en güncel framework&apos;ler, güvenlik standartları ve kullanıcı deneyimi odaklı yaklaşım benimseriz.
           </p>
@@ -183,12 +204,12 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="glass rounded-3xl p-12 mb-20"
+          className="bento-card glass-liquid-strong p-6 md:p-12 mb-8 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl font-bold text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">
             Hizmetlerimiz <span className="gradient-text">Neler?</span>
           </h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
             {services.map((service, index) => (
               <motion.div
                 key={service}
@@ -198,8 +219,8 @@ const About = () => {
                 transition={{ delay: index * 0.05 }}
                 className="flex items-center gap-2"
               >
-                <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" />
-                <span className="text-gray-300">{service}</span>
+                <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 text-green-400 flex-shrink-0" />
+                <span className="text-gray-300 text-sm md:text-base">{service}</span>
               </motion.div>
             ))}
           </div>
@@ -210,12 +231,12 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="glass rounded-3xl p-12 mb-20"
+          className="bento-card glass-liquid-strong p-6 md:p-12 mb-8 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl font-bold text-center mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 md:mb-8">
             Hikayemiz
           </h2>
-          <div className="max-w-3xl mx-auto space-y-6 text-gray-400 leading-relaxed">
+          <div className="max-w-3xl mx-auto space-y-4 md:space-y-6 text-sm md:text-base text-gray-400 leading-relaxed">
             <p>
               Sekersoft, işletmelerin dijital dönüşüm ihtiyaçlarından doğdu. Piyasadaki standart yazılımların
               yetersiz kaldığı noktalarda, işletmelere özel çözümler geliştirmek için kuruldu.
@@ -250,24 +271,24 @@ const About = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="glass rounded-3xl p-12">
-            <h2 className="text-3xl font-bold mb-4">
+          <div className="bento-card glass-liquid-strong p-6 md:p-12">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">
               Projenizi Başlatın
             </h2>
-            <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+            <p className="text-sm md:text-base text-gray-400 mb-6 md:mb-8 max-w-2xl mx-auto">
               İşletmenizin ihtiyaçlarına özel yazılım çözümleri için bizimle iletişime geçin.
               Size en uygun çözümü birlikte belirleyelim.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <Link
                 to="/contact"
-                className="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold shadow-2xl shadow-blue-500/30 transition-all hover:shadow-blue-500/50 hover:scale-105"
+                className="px-6 md:px-8 py-3 md:py-4 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold shadow-2xl shadow-blue-500/30 transition-all hover:shadow-blue-500/50 hover:scale-105 text-sm md:text-base"
               >
                 İletişime Geçin
               </Link>
               <Link
                 to="/products/logistics"
-                className="px-8 py-4 rounded-xl glass glass-hover font-semibold transition-all hover:scale-105"
+                className="px-6 md:px-8 py-3 md:py-4 rounded-xl glass-liquid glass-hover font-semibold transition-all hover:scale-105 text-sm md:text-base"
               >
                 Ürünlerimizi İnceleyin
               </Link>

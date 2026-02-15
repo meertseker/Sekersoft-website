@@ -33,13 +33,15 @@ const Navbar = () => {
     { name: 'İletişim', path: '/contact' },
   ]
 
+  const showSolidNav = isScrolled || isOpen
+
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
-        isScrolled
+        showSolidNav
           ? 'glass-liquid-strong shadow-2xl shadow-black/20 border-white/[0.07]'
           : 'bg-transparent border-transparent shadow-none backdrop-blur-0'
       )}
@@ -127,7 +129,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - açılınca opak arka plan, içerik okunur */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -135,7 +137,7 @@ const Navbar = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden glass-liquid-strong border-t border-white/10"
+            className="md:hidden border-t border-white/10 bg-[#03060d]/98 backdrop-blur-xl shadow-2xl shadow-black/40"
           >
             <div className="px-4 py-6 space-y-2">
               {navLinks.map((link) => (

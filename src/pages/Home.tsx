@@ -20,7 +20,10 @@ import {
   MapPin,
   Clock,
   Calculator,
-  BarChart3
+  BarChart3,
+  Lock,
+  BadgeCheck,
+  FileCheck
 } from 'lucide-react'
 import { screenshotPaths } from '../data/screenshots'
 import { heroCardImages } from '../data/heroImages'
@@ -172,6 +175,15 @@ const Home = () => {
 
   const greetingGradient = 'linear-gradient(135deg, #007AFF 0%, #5AC8FA 100%)'
 
+  // Hero trust badges – güven ve kalite vurgusu
+  const heroTrustBadges = [
+    { icon: FileCheck, label: 'KVKK Uyumlu', title: 'Kişisel verileriniz güvende' },
+    { icon: Shield, label: 'Yerli Yazılım', title: 'Türkiye\'de geliştirildi' },
+    { icon: Zap, label: '7/24 Destek', title: 'Her zaman yanınızdayız' },
+    { icon: Lock, label: 'Güvenli Veri', title: 'Şifreli ve güvenli altyapı' },
+    { icon: BadgeCheck, label: 'Şeffaf Fiyat', title: 'Gizli maliyet yok' },
+  ]
+
   return (
     <div className="min-h-screen pb-8 sm:pb-12">
       {/* Sekersoft Hero Section - Bento Grid Style */}
@@ -224,23 +236,57 @@ const Home = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.6 }}
                 >
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-liquid mb-5">
+                    <Code className="w-4 h-4 text-blue-400" />
+                    <span className="text-xs font-semibold tracking-wide uppercase text-gray-300">
+                      Özel Yazılım Hizmetleri
+                    </span>
+                  </div>
+
                   <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.1] tracking-tight" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}>
                     İşletmeniz için<br />
                     <span className="gradient-text">özel yazılım çözümleri</span>
                   </h1>
 
-                  <p className="text-base md:text-lg text-white mb-8 leading-relaxed max-w-2xl" style={{ textShadow: '0 2px 15px rgba(0,0,0,0.5)' }}>
+                  <p className="text-base md:text-lg text-white mb-6 leading-relaxed max-w-2xl" style={{ textShadow: '0 2px 15px rgba(0,0,0,0.5)' }}>
                     Masaüstü, web ve mobil uygulamalar. İşletmenize özel, modern teknolojilerle geliştirilmiş profesyonel çözümler.
                   </p>
 
                   <Link
                     to="/contact"
-                    className="group inline-flex items-center gap-2 px-8 py-4 rounded-2xl text-white font-semibold shadow-2xl shadow-blue-500/30 transition-all hover:shadow-blue-500/50 hover:scale-105"
+                    className="group inline-flex items-center gap-2 px-8 py-4 rounded-2xl text-white font-semibold shadow-2xl shadow-blue-500/30 transition-all hover:shadow-blue-500/50 hover:scale-105 mb-8"
                     style={{ backgroundImage: greetingGradient }}
                   >
                     Proje Başlat
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Link>
+
+                  {/* Trust badges */}
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-3 sm:gap-x-6">
+                    {heroTrustBadges.map((badge, index) => {
+                      const Icon = badge.icon
+                      return (
+                        <motion.div
+                          key={badge.label}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.4 + index * 0.06, duration: 0.4 }}
+                          className="flex items-center gap-2 text-gray-300"
+                          title={badge.title}
+                        >
+                          <span className="flex items-center justify-center w-7 h-7 rounded-lg shrink-0"
+                            style={{
+                              background: 'linear-gradient(135deg, rgba(0,122,255,0.2), rgba(90,200,250,0.15))',
+                              border: '1px solid rgba(255,255,255,0.08)'
+                            }}
+                          >
+                            <Icon className="w-3.5 h-3.5 text-blue-400" />
+                          </span>
+                          <span className="text-xs font-medium text-gray-400 sm:text-sm sm:text-gray-300">{badge.label}</span>
+                        </motion.div>
+                      )
+                    })}
+                  </div>
                 </motion.div>
               </div>
             </motion.div>

@@ -3,12 +3,12 @@
  * public/ klasöründeki dosyalar kullanılıyor.
  */
 export const heroCardImages = {
-  /** Masaüstü uygulamaları */
-  desktop: '/pc.png',
+  /** Masaüstü – Sekersoft Lojistik uygulaması */
+  desktop: '/screenshots/01-dashboard.png',
   /** Web uygulamaları */
-  web: '/website.png',
+  web: '/webreal.png',
   /** Mobil uygulamalar */
-  mobile: '/mobile.png',
+  mobile: '/mobilereal.png',
   /** Altyapı / veritabanı & bulut */
   infrastructure: '/cloud.png',
 }

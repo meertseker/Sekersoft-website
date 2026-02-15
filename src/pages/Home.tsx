@@ -303,7 +303,7 @@ const Home = () => {
                 <img
                   src={heroCardImages.desktop}
                   alt="Masaüstü uygulaması"
-                  className="w-full h-full object-cover object-[90%_center]"
+                  className="w-full h-full object-cover object-[64%_center]"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />

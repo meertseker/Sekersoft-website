@@ -11,7 +11,7 @@ export const siteConfig = {
   name: 'Şekersoft',
   shortName: 'Şekersoft',
   tagline: 'Özel Yazılım Çözümleri',
-  description: 'Sekersoft, işletmenizin ihtiyaçlarına özel yazılım çözümleri geliştiren bir teknoloji şirketidir. Masaüstü, web ve mobil uygulamalardan veritabanı sistemlerine kadar geniş bir yelpazede hizmet sunuyoruz. İlk ürünümüz Sekersoft Lojistik ile taşımacılık sektörüne offline, güvenli ve kullanıcı dostu çözümler getiriyoruz.',
+  description: 'Sekersoft, işletmelerin operasyonunu sade, güvenli ve ölçülebilir yazılımlarla dijitalleştiren bir teknoloji şirketidir. Web, mobil ve masaüstü çözümler geliştirir; Sekersoft Lojistik ürünüyle taşımacılık süreçlerini tek panelde yönetilebilir hale getirir.',
   url: siteUrl,
   contact: {
     email: 'info@sekersoft.com',
@@ -36,7 +36,7 @@ export const siteConfig = {
   },
   metadata: {
     defaultTitle: 'Sekersoft · Özel Yazılım Çözümleri',
-    defaultDescription: 'Sekersoft, işletmenizin ihtiyaçlarına özel yazılım çözümleri geliştiren bir teknoloji şirketidir. Masaüstü, web ve mobil uygulamalardan veritabanı sistemlerine kadar geniş bir yelpazede hizmet sunuyoruz. İlk ürünümüz Sekersoft Lojistik ile taşımacılık sektörüne offline, güvenli ve kullanıcı dostu çözümler getiriyoruz.',
+    defaultDescription: 'Sekersoft, işletmelerin operasyonunu sade, güvenli ve ölçülebilir yazılımlarla dijitalleştirir. Web, mobil, masaüstü ve lojistik odaklı çözümlerle süreçlerinizi hızlandırır.',
     keywords: [
       'Sekersoft',
       'özel yazılım',

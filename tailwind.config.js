@@ -19,9 +19,16 @@ export default {
           800: '#075985',
           900: '#0c4a6e',
         },
+        /* Semantik marka — index.css :root token’larıyla uyumlu (opacity destekli) */
+        brand: {
+          primary: 'rgb(var(--brand-primary-rgb) / <alpha-value>)',
+          accent: 'rgb(var(--brand-accent-rgb) / <alpha-value>)',
+          secondary: 'rgb(var(--brand-secondary-rgb) / <alpha-value>)',
+        },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
       },
       animation: {
         'gradient': 'gradient 8s linear infinite',

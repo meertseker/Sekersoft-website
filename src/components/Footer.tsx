@@ -8,7 +8,8 @@ import {
   Mail, 
   Phone, 
   MapPin,
-  ArrowRight 
+  ArrowRight,
+  Send
 } from 'lucide-react'
 import { siteConfig } from '../config/site'
 import { submitLeadForm } from '../lib/forms'
@@ -109,7 +110,7 @@ const Footer = () => {
               </div>
             </Link>
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-              {siteConfig.description}
+              İşletmelerin operasyonunu sade, güvenli ve ölçülebilir yazılımlarla dijitalleştiriyoruz.
             </p>
             
             {/* Contact Info */}
@@ -205,41 +206,59 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Newsletter Section */}
-        <div className="glass rounded-2xl p-8 mb-12">
-          <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-2xl font-bold mb-2 gradient-text">
-              Yeniliklerden Haberdar Olun
-            </h3>
-            <p className="text-gray-400 mb-6">
-              En son haberleri, ürün güncellemelerini ve özel teklifleri e-posta ile alın.
-            </p>
-            <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={handleNewsletterSubmit}>
-              <input
-                type="email"
-                placeholder="E-posta adresiniz"
-                value={newsletterEmail}
-                onChange={(event) => setNewsletterEmail(event.target.value)}
-                className="flex-1 px-4 py-3 rounded-xl glass border border-white/20 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all"
-                required
-              />
-              <button
-                type="submit"
-                disabled={newsletterStatus === 'loading'}
-                className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-medium shadow-lg shadow-blue-500/30 transition-all hover:shadow-blue-500/50 hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed"
-              >
-                {newsletterStatus === 'loading' ? 'Gönderiliyor...' : 'Abone Ol'}
-              </button>
-            </form>
-            {newsletterMessage && (
-              <p
-                className={`mt-4 text-sm ${
-                  newsletterStatus === 'success' ? 'text-green-400' : 'text-red-400'
-                }`}
-              >
-                {newsletterMessage}
+        {/* Newsletter — gradient frame + inline action (21st-style) */}
+        <div className="relative mb-12 rounded-2xl overflow-hidden gradient-border">
+          <div className="relative rounded-2xl bg-[rgba(2,8,19,0.92)] backdrop-blur-xl border border-white/5 px-6 py-10 sm:px-10 sm:py-12 overflow-hidden">
+            <div
+              className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[rgba(0,122,255,0.15)] blur-3xl"
+              aria-hidden
+            />
+            <div
+              className="pointer-events-none absolute -left-20 bottom-0 h-48 w-48 rounded-full bg-[rgba(90,200,250,0.1)] blur-3xl"
+              aria-hidden
+            />
+            <div className="max-w-2xl mx-auto text-center relative z-10">
+              <h3 className="font-display text-2xl sm:text-3xl font-bold mb-2 gradient-text tracking-tight">
+                Yazılım ve ürün güncellemelerini alın
+              </h3>
+              <p className="text-gray-400 mb-8 text-sm sm:text-base leading-relaxed">
+                Yeni özellikler, ürün gelişmeleri ve işletmeniz için pratik dijitalleşme içeriklerini e-posta ile alın.
               </p>
-            )}
+              <form className="relative max-w-md mx-auto" onSubmit={handleNewsletterSubmit}>
+                <input
+                  type="email"
+                  placeholder="E-posta adresiniz"
+                  value={newsletterEmail}
+                  onChange={(event) => setNewsletterEmail(event.target.value)}
+                  className="w-full pl-4 pr-[8.25rem] sm:pr-[9rem] py-3.5 rounded-xl glass border border-white/15 focus:border-blue-500/80 focus:outline-none focus:ring-2 focus:ring-blue-500/25 transition-all text-sm placeholder:text-gray-500"
+                  required
+                  aria-label="Haber bülteni e-posta adresi"
+                />
+                <button
+                  type="submit"
+                  disabled={newsletterStatus === 'loading'}
+                  className="absolute right-1.5 top-1/2 -translate-y-1/2 inline-flex items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-sm font-semibold bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white shadow-md shadow-blue-500/25 transition-all hover:shadow-blue-500/40 disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  {newsletterStatus === 'loading' ? (
+                    '…'
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 shrink-0" aria-hidden />
+                      <span>Abone Ol</span>
+                    </>
+                  )}
+                </button>
+              </form>
+              {newsletterMessage && (
+                <p
+                  className={`mt-4 text-sm ${
+                    newsletterStatus === 'success' ? 'text-green-400' : 'text-red-400'
+                  }`}
+                >
+                  {newsletterMessage}
+                </p>
+              )}
+            </div>
           </div>
         </div>
 

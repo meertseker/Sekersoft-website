@@ -27,7 +27,7 @@ const Navbar = () => {
         { name: 'Sekersoft Lojistik', path: '/products/logistics' },
       ]
     },
-    { name: 'Çözümler', path: '/solutions' },
+    { name: 'Hizmetler', path: '/solutions' },
     { name: 'Hakkımızda', path: '/about' },
     { name: 'Blog', path: '/blog' },
     { name: 'İletişim', path: '/contact' },
@@ -39,15 +39,17 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
-        showSolidNav
-          ? 'glass-liquid-strong shadow-2xl shadow-black/20 border-white/[0.07]'
-          : 'bg-transparent border-transparent shadow-none backdrop-blur-0'
-      )}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 sm:pt-4">
+        <div
+          className={cn(
+            'flex items-center justify-between transition-all duration-500 ease-out',
+            showSolidNav
+              ? 'min-h-[4rem] rounded-2xl border border-white/[0.08] px-3 sm:px-5 md:px-6 py-2.5 glass-liquid-strong shadow-2xl shadow-black/30'
+              : 'h-20 border border-transparent py-0'
+          )}
+        >
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group" aria-label={`${siteConfig.name} ana sayfa`}>
             <div className="w-12 h-12 rounded-xl flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:scale-105">
@@ -108,13 +110,13 @@ const Navbar = () => {
               to="/products/logistics#demo"
               className="px-5 py-2 rounded-xl glass-liquid text-sm font-medium transition-all hover:scale-105 hover:glass-liquid-strong"
             >
-              Sekersoft Lojistik
+              Lojistik Çözümü
             </Link>
             <Link
               to="/contact"
               className="px-5 py-2 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white text-sm font-semibold shadow-lg shadow-blue-500/30 transition-all hover:shadow-blue-500/50 hover:scale-105"
             >
-              İletişime Geç
+              Ücretsiz Görüşme
             </Link>
           </div>
 
@@ -139,7 +141,7 @@ const Navbar = () => {
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="md:hidden border-t border-white/10 bg-[#03060d]/98 backdrop-blur-xl shadow-2xl shadow-black/40"
           >
-            <div className="px-4 py-6 space-y-2">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-2">
               {navLinks.map((link) => (
                 <div key={link.name}>
                   <Link
@@ -176,14 +178,14 @@ const Navbar = () => {
                   onClick={() => setIsOpen(false)}
                   className="block w-full px-4 py-3 rounded-xl glass-liquid text-sm font-medium text-center transition-all hover:glass-liquid-strong"
                 >
-                  Sekersoft Lojistik
+                  Lojistik Çözümü
                 </Link>
                 <Link
                   to="/contact"
                   onClick={() => setIsOpen(false)}
                   className="block w-full px-4 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-sm font-semibold text-center transition-all hover:scale-105 shadow-lg shadow-blue-500/30"
                 >
-                  İletişime Geç
+                  Ücretsiz Görüşme
                 </Link>
               </div>
             </div>

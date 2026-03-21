@@ -95,13 +95,13 @@ const Home = () => {
     }))
   }
 
-  const subjectOptions = ['Demo Talebi', 'Fiyat Teklifi', 'Teknik Destek', 'Satış', 'Diğer']
+  const subjectOptions = ['Ücretsiz Ön Görüşme', 'Proje Teklifi', 'Teknik Destek', 'Ürün Demo', 'Diğer']
   // Sekersoft Yazılım Hizmetleri
   const softwareServices = [
     {
       icon: Code,
       title: 'Özel Yazılım Çözümleri',
-      description: 'İşletmenizin ihtiyaçlarına özel, tamamen size özel yazılım çözümleri geliştiriyoruz.',
+      description: 'Süreçlerinize göre tasarlanan, gereksiz özelliklerden arındırılmış yazılımlar geliştiriyoruz.',
       accent: {
         bg: 'linear-gradient(135deg, rgba(0,122,255,0.22), rgba(90,200,250,0.18))',
         shadow: '0 15px 40px rgba(0,122,255,0.18)'
@@ -110,7 +110,7 @@ const Home = () => {
     {
       icon: Monitor,
       title: 'Masaüstü Uygulamaları',
-      description: 'Windows ve macOS için profesyonel, offline çalışan masaüstü uygulamaları.',
+      description: 'Saha operasyonları için hızlı, kararlı ve internet olmadan da çalışabilen masaüstü çözümleri.',
       accent: {
         bg: 'linear-gradient(135deg, rgba(90,200,250,0.22), rgba(50,173,230,0.25))',
         shadow: '0 15px 40px rgba(90,200,250,0.2)'
@@ -119,7 +119,7 @@ const Home = () => {
     {
       icon: Globe,
       title: 'Web Uygulamaları',
-      description: 'Modern, responsive ve yüksek performanslı web uygulamaları ve platformlar.',
+      description: 'Yöneticilerin ve ekiplerin her yerden erişebileceği web panelleri ve iş platformları.',
       accent: {
         bg: 'linear-gradient(135deg, rgba(0,122,255,0.25), rgba(50,173,230,0.2))',
         shadow: '0 15px 40px rgba(0,122,255,0.2)'
@@ -128,7 +128,7 @@ const Home = () => {
     {
       icon: Smartphone,
       title: 'Mobil Uygulamalar',
-      description: 'iOS ve Android için native ve cross-platform mobil uygulama geliştirme.',
+      description: 'Sahadaki ekiplerin veri girişi, takip ve onay süreçlerini kolaylaştıran mobil uygulamalar.',
       accent: {
         bg: 'linear-gradient(135deg, rgba(90,200,250,0.25), rgba(0,122,255,0.18))',
         shadow: '0 15px 40px rgba(90,200,250,0.18)'
@@ -137,7 +137,7 @@ const Home = () => {
     {
       icon: Database,
       title: 'Veritabanı Çözümleri',
-      description: 'Güvenli, ölçeklenebilir ve optimize edilmiş veritabanı sistemleri.',
+      description: 'Verilerinizin düzenli, hızlı ve raporlanabilir olması için güvenli veritabanı altyapısı.',
       accent: {
         bg: 'linear-gradient(135deg, rgba(50,173,230,0.25), rgba(0,122,255,0.18))',
         shadow: '0 15px 40px rgba(50,173,230,0.2)'
@@ -146,7 +146,7 @@ const Home = () => {
     {
       icon: Cloud,
       title: 'Bulut Entegrasyonları',
-      description: 'AWS, Azure ve diğer bulut servisleri ile entegre çözümler.',
+      description: 'Bulut geçişi, yedekleme ve farklı sistemlerle güvenli entegrasyon çözümleri.',
       accent: {
         bg: 'linear-gradient(135deg, rgba(0,122,255,0.25), rgba(90,200,250,0.18))',
         shadow: '0 15px 40px rgba(0,122,255,0.18)'
@@ -156,38 +156,65 @@ const Home = () => {
 
   // Sekersoft Şirket İstatistikleri
   const companyStats = [
-    { icon: Code, value: '100+', label: 'Tamamlanan Proje', accent: 'rgba(0,122,255,0.12)', border: 'rgba(0,122,255,0.35)' },
-    { icon: Users, value: '50+', label: 'Mutlu Müşteri', accent: 'rgba(90,200,250,0.12)', border: 'rgba(90,200,250,0.35)' },
-    { icon: Zap, value: '7/24', label: 'Destek', accent: 'rgba(255,176,32,0.12)', border: 'rgba(255,176,32,0.35)' },
-    { icon: Shield, value: '%100', label: 'Güvenli', accent: 'rgba(50,173,230,0.12)', border: 'rgba(50,173,230,0.35)' },
+    { icon: Code, value: 'Uçtan Uca', label: 'Proje Teslimi', accent: 'rgba(0,122,255,0.12)', border: 'rgba(0,122,255,0.35)' },
+    { icon: Users, value: 'Tek Ekip', label: 'Net İletişim', accent: 'rgba(90,200,250,0.12)', border: 'rgba(90,200,250,0.35)' },
+    { icon: Zap, value: '7/24', label: 'Kritik Destek', accent: 'rgba(255,176,32,0.12)', border: 'rgba(255,176,32,0.35)' },
+    { icon: Shield, value: 'KVKK', label: 'Güvenlik Odaklı', accent: 'rgba(50,173,230,0.12)', border: 'rgba(50,173,230,0.35)' },
   ]
 
   const softwareBenefits = [
-    'İşletmenizin özel ihtiyaçlarını anlıyoruz - Her işletme farklıdır, çözümleriniz de özel olmalı',
-    'Zamanınızı değerli görüyoruz - Hızlı teslimat ve verimli süreçlerle işinizi aksatmıyoruz',
-    'Bütçenize uygun çözümler - Şeffaf fiyatlandırma, gizli maliyet yok',
-    'Güvenliğiniz önceliğimiz - Verileriniz güvende, gizliliğiniz korunur',
-    'Sürekli yanınızdayız - Kurulum sonrası destek ve bakım hizmetlerimiz devam eder',
-    'Kullanım kolaylığı - Teknik bilgi gerektirmeden, herkesin kullanabileceği arayüzler',
-    'Ölçeklenebilir çözümler - İşletmeniz büyüdükçe yazılımınız da büyür',
-    'Yerli ve güvenilir - Türkiye\'de geliştirilmiş, yerel desteğe erişim kolaylığı',
+    'İhtiyacınızı önce analiz ederiz, sonra kod yazarız.',
+    'Teknik jargonu azaltır, süreci işletme diliyle anlatırız.',
+    'Takvim, kapsam ve maliyeti proje başında netleştiririz.',
+    'Yazılım tesliminden sonra eğitim ve destek vermeye devam ederiz.',
+    'Kullanımı zor değil, ekibinizin günlük işine uygun arayüzler tasarlarız.',
+    'Sistemleriniz büyüdükçe yazılımı adım adım ölçeklendiririz.',
+    'Veri güvenliği, yedekleme ve yetkilendirme başlıklarını standart sunarız.',
+    'Türkiye merkezli ekip ile hızlı iletişim ve yerel destek sağlarız.',
   ]
-
-  const greetingGradient = 'linear-gradient(135deg, #007AFF 0%, #5AC8FA 100%)'
 
   // Hero trust badges – güven ve kalite vurgusu
   const heroTrustBadges = [
-    { icon: FileCheck, label: 'KVKK Uyumlu', title: 'Kişisel verileriniz güvende' },
-    { icon: Shield, label: 'Yerli Yazılım', title: 'Türkiye\'de geliştirildi' },
-    { icon: Zap, label: '7/24 Destek', title: 'Her zaman yanınızdayız' },
-    { icon: Lock, label: 'Güvenli Veri', title: 'Şifreli ve güvenli altyapı' },
-    { icon: BadgeCheck, label: 'Şeffaf Fiyat', title: 'Gizli maliyet yok' },
+    { icon: FileCheck, label: 'KVKK Odaklı', title: 'Kişisel verilerinizin korunmasını merkeze alırız' },
+    { icon: Shield, label: 'Yerel Ekip', title: 'Türkiye merkezli, hızlı iletişim' },
+    { icon: Zap, label: 'Hızlı Teslimat', title: 'Aşamalı ve ölçülebilir proje yönetimi' },
+    { icon: Lock, label: 'Güvenli Altyapı', title: 'Şifreleme ve yetkilendirme standardı' },
+    { icon: BadgeCheck, label: 'Net Kapsam', title: 'Belirsiz ve gizli maliyetleri azaltan planlama' },
+  ]
+
+  const deliveryProcess = [
+    {
+      icon: Users,
+      title: '1. İşinizi Anlıyoruz',
+      description: 'Hedeflerinizi, mevcut süreçlerinizi ve operasyonel sorunları birlikte netleştiriyoruz.',
+    },
+    {
+      icon: FileCheck,
+      title: '2. Yol Haritası Çıkarıyoruz',
+      description: 'Kapsam, süre, bütçe ve teslim adımlarını yazılı olarak paylaşıyoruz.',
+    },
+    {
+      icon: Code,
+      title: '3. Geliştirip Gösteriyoruz',
+      description: 'Projeyi aşamalar halinde geliştiriyor, her adımda sizinle birlikte kontrol ediyoruz.',
+    },
+    {
+      icon: Shield,
+      title: '4. Yayına Alıp Destekliyoruz',
+      description: 'Eğitim, teknik destek ve sürekli iyileştirme ile sisteminizi canlı tutuyoruz.',
+    },
   ]
 
   return (
     <div className="min-h-screen pb-8 sm:pb-12">
       {/* Sekersoft Hero Section - Bento Grid Style */}
       <section className="relative px-4 sm:px-6 lg:px-8 pt-24 sm:pt-24 lg:pt-32 pb-12 sm:pb-16 lg:pb-20 overflow-hidden">
+        {/* Layered mesh + grid (depth, 21st-style) */}
+        <div className="absolute inset-0 -z-10 mesh-hero pointer-events-none" aria-hidden />
+        <div
+          className="absolute inset-0 -z-10 opacity-[0.35] brand-grid pointer-events-none"
+          aria-hidden
+        />
         {/* Animated Background */}
         <div className="absolute inset-0 -z-10">
           <div
@@ -239,27 +266,35 @@ const Home = () => {
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-liquid mb-5">
                     <Code className="w-4 h-4 text-blue-400" />
                     <span className="text-xs font-semibold tracking-wide uppercase text-gray-300">
-                      Özel Yazılım Hizmetleri
+                      İşletmeler İçin Özel Yazılım
                     </span>
                   </div>
 
-                  <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.1] tracking-tight" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}>
-                    İşletmeniz için<br />
-                    <span className="gradient-text">özel yazılım çözümleri</span>
+                  <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.08] tracking-tight" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}>
+                    İş süreçlerinizi<br />
+                    <span className="gradient-text">net ve ölçülebilir şekilde dijitalleştiriyoruz</span>
                   </h1>
 
-                  <p className="text-base md:text-lg text-white mb-6 leading-relaxed max-w-2xl" style={{ textShadow: '0 2px 15px rgba(0,0,0,0.5)' }}>
-                    Masaüstü, web ve mobil uygulamalar. İşletmenize özel, modern teknolojilerle geliştirilmiş profesyonel çözümler.
+                  <p className="text-base md:text-lg text-white/95 mb-8 leading-relaxed max-w-2xl" style={{ textShadow: '0 2px 15px rgba(0,0,0,0.5)' }}>
+                    Sekersoft; web, mobil ve masaüstü yazılımlar geliştirerek işletmelerin operasyonunu hızlandırır, hata oranını azaltır ve raporlanabilir hale getirir.
                   </p>
 
-                  <Link
-                    to="/contact"
-                    className="group inline-flex items-center gap-2 px-8 py-4 rounded-2xl text-white font-semibold shadow-2xl shadow-blue-500/30 transition-all hover:shadow-blue-500/50 hover:scale-105 mb-8"
-                    style={{ backgroundImage: greetingGradient }}
-                  >
-                    Proje Başlat
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 mb-8">
+                    <Link
+                      to="/contact"
+                      className="group gradient-cta inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl text-white font-semibold shadow-2xl shadow-blue-500/30 transition-all hover:shadow-blue-500/50 hover:scale-[1.02] active:scale-[0.99]"
+                    >
+                      Ücretsiz Ön Görüşme
+                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                    <Link
+                      to="/products"
+                      className="group inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-semibold text-white border border-white/15 bg-white/[0.06] backdrop-blur-md shadow-lg shadow-black/20 transition-all hover:bg-white/[0.1] hover:border-white/25 hover:scale-[1.02]"
+                    >
+                      Çözümleri İncele
+                      <ArrowRight className="w-5 h-5 opacity-80 group-hover:translate-x-0.5 transition-transform" />
+                    </Link>
+                  </div>
 
                   {/* Trust badges */}
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-3 sm:gap-x-6">
@@ -489,6 +524,49 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Process clarity section for non-technical decision makers */}
+      <section className="pt-0 pb-8 sm:pb-12 lg:pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Projeleri <span className="gradient-text">nasıl yönetiyoruz?</span>
+            </h2>
+            <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+              Kurumsal yazılım firmalarındaki net proje disiplinini, daha hızlı ve ulaşılabilir bir işbirliği modeliyle sunuyoruz.
+            </p>
+          </motion.div>
+
+          <div className="bento-grid">
+            {deliveryProcess.map((step, index) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08, duration: 0.5 }}
+                className="bento-medium bento-card glass-liquid glass-reflective"
+              >
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4"
+                  style={{
+                    background: 'linear-gradient(135deg, rgba(0,122,255,0.25), rgba(90,200,250,0.2))',
+                    boxShadow: '0 12px 30px rgba(0,122,255,0.18)'
+                  }}
+                >
+                  <step.icon className="w-5 h-5 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">{step.title}</h3>
+                <p className="text-gray-400 leading-relaxed text-sm md:text-base">{step.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Bento Grid Section - Featured Products & Stats */}
       <section className="pt-0 pb-8 sm:pb-12 lg:pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -527,14 +605,13 @@ const Home = () => {
                 </h2>
 
                 <p className="text-base md:text-lg text-gray-300 mb-6 leading-relaxed max-w-2xl">
-                  Taşımacılık operasyonlarınızı kontrol panelinden yönetin. Offline masaüstü uygulamasıyla sipariş, güzergâh ve maliyetleri aynı yerde gör.
+                  Taşımacılık operasyonlarınızı tek panelden yönetin. Sekersoft Lojistik ile sipariş, rota, maliyet ve raporlama sürecini tek yerde toplayın.
                 </p>
 
                 <div className="flex flex-wrap gap-3 mb-6">
                   <Link
                     to="/products/logistics"
-                    className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white font-semibold shadow-xl shadow-blue-500/30 transition-all hover:shadow-blue-500/50 hover:scale-105"
-                    style={{ backgroundImage: greetingGradient }}
+                    className="group gradient-cta inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white font-semibold shadow-xl shadow-blue-500/30 transition-all hover:shadow-blue-500/50 hover:scale-105"
                   >
                     Ürünü İncele
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -641,10 +718,10 @@ const Home = () => {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Yazılım <span className="gradient-text">Hizmetlerimiz</span>
+              Neler <span className="gradient-text">yapıyoruz?</span>
             </h2>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              İşletmenizin dijital dönüşümü için ihtiyacınız olan tüm yazılım çözümlerini sunuyoruz.
+              İşletmenizin büyüklüğüne ve sektörüne uygun, doğrudan operasyon sonucuna etki eden yazılımlar geliştiriyoruz.
             </p>
           </motion.div>
 
@@ -696,10 +773,10 @@ const Home = () => {
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                  Neden <span className="gradient-text">Sekersoft?</span>
+                  Neden <span className="gradient-text">işletmeler Sekersoft ile çalışıyor?</span>
                 </h2>
                 <p className="text-lg text-gray-400 mb-6">
-                  Müşteri ihtiyaçlarınızı anlıyor, işletmenizin büyümesine katkı sağlayacak özel çözümler geliştiriyoruz.
+                  Büyük yazılım firmalarının disiplinini, daha hızlı ve ulaşılabilir bir ekip modeliyle sunuyoruz.
                 </p>
                 <div className="grid md:grid-cols-2 gap-3">
                   {softwareBenefits.slice(0, 6).map((benefit, index) => (
@@ -719,7 +796,7 @@ const Home = () => {
               </div>
 
               {/* 3D Cards - Hidden on mobile, visible on desktop */}
-              <div className="hidden lg:block relative h-[400px] flex items-center justify-center" style={{ perspective: '1000px' }}>
+              <div className="hidden lg:flex relative h-[400px] items-center justify-center" style={{ perspective: '1000px' }}>
                 {/* 3D Floating Cards Stack */}
                 <div className="relative w-full max-w-md">
                   {/* Back Card */}
@@ -797,8 +874,8 @@ const Home = () => {
                         <Code className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-bold text-white">Özel Çözümler</h3>
-                        <p className="text-xs text-gray-400">Tamamen Size Özel</p>
+                        <h3 className="text-lg font-bold text-white">İş Odaklı Çözümler</h3>
+                        <p className="text-xs text-gray-400">Sadece ihtiyacınız olan kadar</p>
                       </div>
                     </div>
                     <div className="space-y-3">
@@ -841,8 +918,8 @@ const Home = () => {
                     <Code className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-white">Özel Çözümler</h3>
-                    <p className="text-xs text-gray-400">Tamamen Size Özel</p>
+                    <h3 className="text-lg font-bold text-white">İş Odaklı Çözümler</h3>
+                    <p className="text-xs text-gray-400">Sadece ihtiyacınız olan kadar</p>
                   </div>
                 </div>
                 <div className="space-y-3">
@@ -898,10 +975,10 @@ const Home = () => {
               >
                 <div className="mb-6">
                   <h2 className="text-2xl md:text-3xl font-bold mb-2">
-                    Bizimle <span className="gradient-text">İletişime Geçin</span>
+                    Projenizi <span className="gradient-text">birlikte netleştirelim</span>
                   </h2>
                   <p className="text-gray-400 text-sm md:text-base">
-                    Sorularınız mı var? Formu doldurun, size en kısa sürede dönüş yapalım.
+                    İşletmenizde çözülmesini istediğiniz süreci yazın. Teknik detayları biz sizinle birlikte netleştirelim.
                   </p>
                 </div>
                 <form onSubmit={handleSubmit} className="space-y-4">

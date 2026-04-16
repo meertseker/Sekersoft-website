@@ -1,9 +1,15 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://www.sekersoft.com/sitemap.xml
 
-# Disallow admin or API paths if they exist in the future
-# Disallow: /admin/
-# Disallow: /api/
+User-agent: GPTBot
+Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: CCBot
+Allow: /

@@ -4,9 +4,13 @@ Sekersoft is trusted by over 200+ active users with a 4.9/5 average rating. Our 
 
 ## Key Stats
 - **200+** Happy Users
+- **15+** Major Logistics Partners
 - **4.9/5** Average Rating
 - **95%** Satisfaction Rate
 - **1000+** Managed Orders per day
+
+## Featured Logistics Partners
+Our platform is used by industry leaders such as Kale Lojistik, Ares Lojistik, and DGN Lojistik. For a full list of our diverse customer base, see [Our Customers](/docs/customers.md).
 
 ## Customer Feedback
 

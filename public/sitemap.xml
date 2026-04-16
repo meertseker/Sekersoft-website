@@ -96,4 +96,46 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.sekersoft.com/docs/introduction.md</loc>
+    <lastmod>2025-03-24T12:00:00.000Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sekersoft.com/docs/products.md</loc>
+    <lastmod>2025-03-24T12:00:00.000Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sekersoft.com/docs/api.md</loc>
+    <lastmod>2025-03-24T12:00:00.000Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sekersoft.com/docs/workflows.md</loc>
+    <lastmod>2025-03-24T12:00:00.000Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sekersoft.com/docs/testimonials.md</loc>
+    <lastmod>2025-03-24T12:00:00.000Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sekersoft.com/docs/blog.md</loc>
+    <lastmod>2025-03-24T12:00:00.000Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sekersoft.com/docs/faq.md</loc>
+    <lastmod>2025-03-24T12:00:00.000Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>

@@ -12,6 +12,9 @@ Sekersoft is a software company that digitalizes business operations through sim
 - /products: Overview of available software products.
 - /products/logistics: Detailed information about Sekersoft Lojistik.
 - /solutions: Industry-specific and custom software solutions.
+- /testimonials: Customer reviews and success stories.
+- /blog: Latest news, industry insights, and blog posts.
+- /support: FAQ and support center.
 - /demo: Free demo request form for Sekersoft Lojistik.
 - /contact: Contact information and business inquiry form.
 - /about: Information about company values and mission.

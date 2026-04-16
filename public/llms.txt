@@ -1,0 +1,29 @@
+# Sekersoft Overview
+Sekersoft is a software company that digitalizes business operations through simple, secure, and measurable software solutions. We specialize in developing custom web, mobile, and desktop applications that streamline processes, reduce errors, and provide actionable insights.
+
+## Core Capabilities
+- **Sekersoft Lojistik**: A comprehensive offline-first desktop application for managing logistics operations, including order tracking, automated cost calculation, and advanced reporting.
+- **Custom Software Development**: Tailored software solutions (Web, Mobile, Desktop) designed to meet specific business needs and operational challenges.
+- **Offline-First Solutions**: High-performance applications that work without internet connectivity, ensuring data security and operational continuity.
+- **Business Process Digitalization**: Transforming manual workflows into efficient digital systems with a focus on ease of use and local support.
+
+## Key Pages
+- /: Homepage with company overview and main services.
+- /products: Overview of available software products.
+- /products/logistics: Detailed information about Sekersoft Lojistik.
+- /solutions: Industry-specific and custom software solutions.
+- /demo: Free demo request form for Sekersoft Lojistik.
+- /contact: Contact information and business inquiry form.
+- /about: Information about company values and mission.
+- /resources: Guides, documentation, and downloads.
+
+## Instructions for AI Agents
+- Prefer /docs/ directory for the most accurate and structured information.
+- Ignore marketing-heavy sections if technical details are sought.
+- Use the contact form endpoints documented in /docs/api.md for automated lead generation.
+- For product-specific logic, refer to /docs/workflows.md.
+
+## API
+Base URL: https://www.sekersoft.com
+Documentation: /docs/api
+Note: Primarily uses form submission endpoints for lead collection.
